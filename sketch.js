@@ -14,7 +14,7 @@ function setup() {
   buttonENTER = createP('ENTER');
   buttonENTER.style('margin-top', "150px");
   buttonENTER.style('font-family', "courier");
-  buttonENTER.style('font-size', "26px");
+  buttonENTER.style('font-size', "100px");
   buttonENTER.style('text-align', "center");
 
 
@@ -27,7 +27,7 @@ function draw() {
   textSize(32)
   textAlign(CENTER, CENTER);
   text(frameCount, width / 2, height / 2)
-  
+
 
 }
 

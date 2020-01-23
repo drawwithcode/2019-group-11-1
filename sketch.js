@@ -1,22 +1,24 @@
-var button2;
+var buttonENTER;
 
 function preload(){
 
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight)
-  button2 = createButton("hello")
-button2.touchStarted(clickButton);
-button2.style('background-color', "gold");
-button2.position(windowWidth/2, 87);
-  // put setup code here
+  createCanvas(windowWidth,windowHeight);
+
+
+  buttonENTER2 = createP('ENTER');
+  buttonENTER2.position(windowWidth/2, 100);
+  buttonENTER2.style('font-family', "courier");
+  buttonENTER2.touchStarted(clickButton);
+
+
 
 
 }
 
 function draw() {
-  // put drawing code here
   background("red");
   textSize(32)
   text(frameCount, width/2, height/2)

@@ -27,25 +27,13 @@ function draw() {
   background(139, 215, 232);
 
   imageMode(CENTER);
-  image(logoGDQ, windowWidth / 2, windowHeight  /2.5 , logoGDQ.width / 2, logoGDQ.height / 2);
-
-
-
-
-  // textSize(32)
-  // textAlign(CENTER, CENTER);
-  // text(frameCount, width / 2, height / 2 + 200)
-
-
+  image(logoGDQ, windowWidth / 2, windowHeight / 2.5, logoGDQ.width / 2, logoGDQ.height / 2);
 }
 
 
 function clickButton() {
-  var myUrl = "page2.html" + "?" + "frame=" + frameCount
-
-
+  var myUrl = "menu.html" 
   window.open(myUrl, "_self");
-
 }
 //fixed screen when you touch it
 function touchMoved() {

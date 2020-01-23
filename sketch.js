@@ -39,3 +39,7 @@ function clickButton() {
   window.open(myUrl, "_self");
 
 }
+//fixed screen when you touch it
+function touchMoved() {
+  return false;
+}

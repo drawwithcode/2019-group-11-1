@@ -1,9 +1,15 @@
+var button2;
+
 function preload(){
 
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
+  button2 = createButton("hello")
+button2.touchStarted(clickButton);
+button2.style('background-color', "gold");
+button2.position(windowWidth/2, 87);
   // put setup code here
 
 
@@ -16,11 +22,11 @@ function draw() {
   text(frameCount, width/2, height/2)
 }
 
-var myArray = [1,2,3,"hello!"];
 
-function touchStarted() { //vanilla javascript interaction
+
+function clickButton() {
   var myUrl = "page2.html" + "?" + "frame=" + frameCount
-  //myUrl =+ "&" + "array" + "=" + JSON.stringify(myArray); //+=  ---> means adding
+
 
   window.open(myUrl, "_self");
 

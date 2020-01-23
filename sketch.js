@@ -1,5 +1,5 @@
 function preload(){
-  
+
 }
 
 function setup() {
@@ -18,7 +18,7 @@ function draw() {
 
 var myArray = [1,2,3,"hello!"];
 
-function mouseClicked() { //vanilla javascript interaction
+function touchStarted() { //vanilla javascript interaction
   var myUrl = "page2.html" + "?" + "frame=" + frameCount
   //myUrl =+ "&" + "array" + "=" + JSON.stringify(myArray); //+=  ---> means adding
 

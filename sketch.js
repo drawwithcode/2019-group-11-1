@@ -1,9 +1,9 @@
 var buttonENTER;
-var myImage;
+var logoGDQ;
 var canvas;
 
 function preload() {
-  myImage = loadImage("./assets/enter.png");
+  logoGDQ = loadImage("./assets/logogdq.png");
 }
 
 function setup() {
@@ -11,8 +11,9 @@ function setup() {
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
 
-  buttonENTER = createP('ENTER');
-  buttonENTER.style('margin-top', "150px");
+  buttonENTER = createP('enter');
+  buttonENTER.style('margin-top', "1200px");
+  buttonENTER.style('color', "#415b7e");
   buttonENTER.style('font-family', "courier");
   buttonENTER.style('font-size', "100px");
   buttonENTER.style('text-align', "center");
@@ -23,10 +24,17 @@ function setup() {
 }
 
 function draw() {
-  background("red");
-  textSize(32)
-  textAlign(CENTER, CENTER);
-  text(frameCount, width / 2, height / 2)
+  background(139, 215, 232);
+
+  imageMode(CENTER);
+  image(logoGDQ, windowWidth / 2, windowHeight  /2.5 , logoGDQ.width / 2, logoGDQ.height / 2);
+
+
+
+
+  // textSize(32)
+  // textAlign(CENTER, CENTER);
+  // text(frameCount, width / 2, height / 2 + 200)
 
 
 }
@@ -42,4 +50,8 @@ function clickButton() {
 //fixed screen when you touch it
 function touchMoved() {
   return false;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

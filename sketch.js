@@ -1,29 +1,35 @@
 var buttonENTER;
+var myImage;
+var canvas;
 
-function preload(){
-
+function preload() {
+  myImage = loadImage("./assets/enter.png");
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0, 0);
+  canvas.style("z-index", "-1");
+
+  buttonENTER = createP('ENTER');
+  buttonENTER.style('margin-top', "150px");
+  buttonENTER.style('font-family', "courier");
+  buttonENTER.style('font-size', "26px");
+  buttonENTER.style('text-align', "center");
 
 
-  buttonENTER2 = createP('ENTER');
-  buttonENTER2.position(windowWidth/2, 100);
-  buttonENTER2.style('font-family', "courier");
-  buttonENTER2.touchStarted(clickButton);
-
-
-
+  buttonENTER.touchStarted(clickButton);
 
 }
 
 function draw() {
   background("red");
   textSize(32)
-  text(frameCount, width/2, height/2)
-}
+  textAlign(CENTER, CENTER);
+  text(frameCount, width / 2, height / 2)
+  
 
+}
 
 
 function clickButton() {

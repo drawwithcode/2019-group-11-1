@@ -1,4 +1,4 @@
-
+//PLAY
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
@@ -20,6 +20,7 @@ function touchMoved() {
   return false;
 }
 
+//function to resize the window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }

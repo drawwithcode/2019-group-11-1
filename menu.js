@@ -1,9 +1,13 @@
+//MENU
+
+//variables
 var canvas;
 var gameTitle;
 var aboutTheGame;
 var playTheGame;
 var leaderboard;
 
+//preloading assets
 function preload() {
   gameTitle = loadImage("./assets/2NT.png");
 }
@@ -16,10 +20,11 @@ function setup() {
   background(139, 215, 232);
   textSize(32)
 
-
+  //2NT LOGO in the center
   imageMode(CENTER);
   image(gameTitle, windowWidth / 2, windowHeight / 3, gameTitle.width / 6, gameTitle.height / 6);
 
+  //ABOUT BUTTON
   aboutTheGame = createP('?');
   aboutTheGame.style('margin-top', "900px");
   // aboutTheGame.style('color', "#415b7e");
@@ -28,10 +33,11 @@ function setup() {
   // aboutTheGame.style('text-align', "center");
   aboutTheGame.touchStarted(clickButtonAbout);
 
-
+  //PLAY BUTTON
   playTheGame = createP('play');
   playTheGame.touchStarted(clickButtonPlay);
 
+  //LEADERBOARD BUTTON
   leaderboard = createP('leaderboard');
   leaderboard.touchStarted(clickButtonLeaderboard);
 
@@ -42,18 +48,21 @@ function setup() {
   var myArray = JSON.parse(array_string);
 }
 
+//FUNCTION TO OPEN THE ABOUT PAGE
 function clickButtonAbout() {
   var myUrl = "about.html"
   window.open(myUrl, "_self");
 }
 
+//FUNCTION TO OPEN THE PLAY PAGE
 function clickButtonPlay() {
   var myUrl = "play.html"
   window.open(myUrl, "_self");
 }
 
+//FUNCTION TO OPEN THE LEADERBOARD PAGE
 function clickButtonLeaderboard() {
-  var myUrl = "leaderboard.html" 
+  var myUrl = "leaderboard.html"
   window.open(myUrl, "_self");
 }
 
@@ -62,6 +71,7 @@ function touchMoved() {
   return false;
 }
 
+//function to resize the window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }

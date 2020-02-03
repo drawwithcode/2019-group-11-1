@@ -1,4 +1,4 @@
-
+//LEADERBOARD
 
 function preload() {
 
@@ -27,6 +27,7 @@ function touchMoved() {
   return false;
 }
 
+//function to resize the window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }

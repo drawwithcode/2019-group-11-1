@@ -9,11 +9,36 @@ function setup() {
   ellipseMode(CENTER);
   ellipse( width/2, height/2, 200, 200);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   var url_string = window.location.href;
   var myUrl = new URL(url_string);
   var array_string = myUrl.searchParams.get("array");
   var myArray = JSON.parse(array_string);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 //fixed screen when you touch it
 function touchMoved() {

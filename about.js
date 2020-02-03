@@ -1,13 +1,41 @@
 //ABOUT
 
+//variables
+var pokeball;
+var buttonBACK;
+
+//preloading the assets
+function preload(){
+  pokeball = loadImage("./assets/pokeball.png");
+}
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
 
-  background(150, 200, 232);
-  ellipseMode(CENTER);
-  ellipse( width/2, height/2, 100, 100);
+  background(139, 215, 232);
+
+  //POKEBALL PNG
+  imageMode(CENTER);
+  image(pokeball,width/2, 250, 200, 200);
+
+
+  //button BACK
+  buttonBACK = createP('--back');
+  buttonBACK.style('margin-top', "60px");
+  buttonBACK.style('margin-left', "40px");
+  buttonBACK.style('color', "#415b7e");
+  buttonBACK.style('font-family', "courier");
+  buttonBACK.style('font-size', "80px");
+  buttonBACK.style('text-align', "left");
+
+  buttonBACK.touchStarted(clickButton);
+
+
+
+
+
 
   var url_string = window.location.href;
   var myUrl = new URL(url_string);
@@ -15,7 +43,11 @@ function setup() {
   var myArray = JSON.parse(array_string);
 }
 
-
+//function to return to the menu page
+function clickButton() {
+  var myUrl = "menu.html"
+  window.open(myUrl, "_self");
+}
 
 
 

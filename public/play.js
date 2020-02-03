@@ -44,8 +44,3 @@ function mouseDragged() {
 
 	ellipse(mouseX, mouseY, 20)
 }
-
-//fixed screen when you touch it
-function touchMoved() {
-  return false;
-}

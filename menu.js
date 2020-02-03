@@ -25,8 +25,8 @@ function setup() {
   image(gameTitle, windowWidth / 2, windowHeight / 3, gameTitle.width / 6, gameTitle.height / 6);
 
   //ABOUT BUTTON
-  aboutTheGame = createP('?');
-  aboutTheGame.style('margin-top', "900px");
+  aboutTheGame = createP('(about)');
+  aboutTheGame.style('margin-top', "800px");
   // aboutTheGame.style('color', "#415b7e");
   // aboutTheGame.style('font-family', "courier");
   // aboutTheGame.style('font-size', "80px");
@@ -34,18 +34,18 @@ function setup() {
   aboutTheGame.touchStarted(clickButtonAbout);
 
   //PLAY BUTTON
-  playTheGame = createP('play');
+playTheGame = createP('[play]');
   playTheGame.touchStarted(clickButtonPlay);
 
   //LEADERBOARD BUTTON
-  leaderboard = createP('leaderboard');
+  leaderboard = createP('{leaderboard}');
   leaderboard.touchStarted(clickButtonLeaderboard);
 
 
-  var url_string = window.location.href;
-  var myUrl = new URL(url_string);
-  var array_string = myUrl.searchParams.get("array");
-  var myArray = JSON.parse(array_string);
+  // var url_string = window.location.href;
+  // var myUrl = new URL(url_string);
+  // var array_string = myUrl.searchParams.get("array");
+  // var myArray = JSON.parse(array_string);
 }
 
 //FUNCTION TO OPEN THE ABOUT PAGE

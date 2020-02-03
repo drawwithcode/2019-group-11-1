@@ -18,16 +18,17 @@ function setup() {
 
   //POKEBALL PNG
   imageMode(CENTER);
-  image(pokeball,width/2, 250, 200, 200);
+  image(pokeball,width/2, 200, 150, 150);
 
 
   //button BACK
-  buttonBACK = createP('--back');
+  buttonBACK = createP('< back');
   buttonBACK.style('margin-top', "60px");
   buttonBACK.style('margin-left', "40px");
   buttonBACK.style('color', "#415b7e");
   buttonBACK.style('font-family', "courier");
-  buttonBACK.style('font-size', "80px");
+  buttonBACK.style('font-size', "60px");
+  buttonBACK.style('font-style', "italic");
   buttonBACK.style('text-align', "left");
 
   buttonBACK.touchStarted(clickButton);
@@ -37,10 +38,10 @@ function setup() {
 
 
 
-  var url_string = window.location.href;
-  var myUrl = new URL(url_string);
-  var array_string = myUrl.searchParams.get("array");
-  var myArray = JSON.parse(array_string);
+  // var url_string = window.location.href;
+  // var myUrl = new URL(url_string);
+  // var array_string = myUrl.searchParams.get("array");
+  // var myArray = JSON.parse(array_string);
 }
 
 //function to return to the menu page

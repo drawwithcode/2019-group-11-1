@@ -15,7 +15,7 @@ function setup() {
 
 
   // put setup code here
-  createCanvas(800,800);
+  createCanvas(windowWidth, windowHeight);
   background('red');
   // Create a new connection using socket.io (imported in index.html)
   socket = io();

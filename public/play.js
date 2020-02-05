@@ -126,7 +126,7 @@ function checkCompletition(x, y) {
 
   filter(BLUR, 10);
   imageMode(CENTER);
-  image(star, width / 2, height / 2, 200, 200)
+  //image(star, width / 2, height / 2, 200, 200)
   //alert("Task Completed");
 
   //refresh!

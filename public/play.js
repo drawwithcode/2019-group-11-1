@@ -16,7 +16,7 @@ var grid = new Array(righe);
 function setup() {
 
 
-  let cnv = createCanvas(800, 640);
+  let cnv = createCanvas(640, 800);
   cnv.position((windowWidth / 2) - 400, (windowHeight / 2) - 400);
   //background(moon)
   // Create a new connection using socket.io (imported in index.html)

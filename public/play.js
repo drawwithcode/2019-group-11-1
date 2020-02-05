@@ -106,7 +106,7 @@ function mouseClicked() {
 function fillRectangle(x, y) {
 
   //coloring the rectangle
-  fill(255, 20, 147, 120);
+  fill(51, 73, 108, 120);
   stroke(255)
 
   var ascisse = parseInt(x / xSize);

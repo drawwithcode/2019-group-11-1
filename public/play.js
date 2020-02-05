@@ -33,7 +33,7 @@ function setup() {
   xSize = 640 / righe;
   ySize = 800 / colonne;
 
-  stroke(128, 255, 255);
+  stroke(51, 73, 108, 120);
   strokeWeight(4);
   noFill();
 

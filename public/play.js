@@ -18,7 +18,7 @@ var ySize;
 var clickLimit = 1;
 
 function setup() {
-
+  strokeWeight(4);
   let cnv = createCanvas(640, 800);
   cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 400);
   //background(moon)
@@ -33,9 +33,9 @@ function setup() {
   xSize = 640 / righe;
   ySize = 800 / colonne;
 
-  stroke(255);
-  strokeWeight(4)
-  noFill()
+  stroke(128, 255, 255);
+  strokeWeight(4);
+  noFill();
 
 
   //-------griglia di appoggio per il controllo finale

@@ -26,9 +26,9 @@ function setup() {
   buttonBACK.style('margin-top', "60px");
   buttonBACK.style('margin-left', "40px");
   buttonBACK.style('color', "#415b7e");
-  buttonBACK.style('font-family', "courier");
+  buttonBACK.style('font-family', "VT323");
   buttonBACK.style('font-size', "60px");
-  buttonBACK.style('font-style', "italic");
+  //buttonBACK.style('font-style', "italic");
   buttonBACK.style('text-align', "left");
 
   buttonBACK.touchStarted(clickButton);

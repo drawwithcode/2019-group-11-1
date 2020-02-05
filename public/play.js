@@ -26,8 +26,8 @@ function setup() {
   socket.on('mouseBroadcast', newDrawing);
 
 
-  var xSize = 800 / righe;
-  var ySize = 800 / colonne;
+  var xSize = 1000 / righe;
+  var ySize = 1000 / colonne;
 
   stroke(255);
   strokeWeight(2)
@@ -95,8 +95,8 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
-  var xSize = 500 / righe;
-  var ySize = 500 / colonne;
+  var xSize = 1000 / righe;
+  var ySize = 1000 / colonne;
 
   //coloring the rectangle
   fill(255, 20, 147, 120);

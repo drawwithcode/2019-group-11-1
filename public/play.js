@@ -17,7 +17,7 @@ function setup() {
 
 
   let cnv = createCanvas(640, 800);
-  cnv.position((windowWidth / 2) - 400, (windowHeight / 2) - 400);
+  cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 400);
   //background(moon)
   // Create a new connection using socket.io (imported in index.html)
   socket = io();

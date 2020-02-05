@@ -18,7 +18,7 @@ function setup() {
 
   let cnv = createCanvas(800, 800);
   cnv.position((windowWidth / 2) - 400, (windowHeight / 2) - 400);
-  background(moon)
+  //background(moon)
   // Create a new connection using socket.io (imported in index.html)
   socket = io();
   // Define which function should be called when a new message
@@ -52,7 +52,9 @@ function setup() {
   }
 }
 
-function draw() {}
+function draw() {
+
+}
 
 // Callback function called when a new message comes from the server
 // Data parameters will contain the received data
@@ -99,7 +101,7 @@ function fillRectangle(x, y) {
   var ySize = 800 / colonne;
 
   //coloring the rectangle
-  fill(255, 20, 147, 120);
+  fill(255, 20, 147);
   stroke(255)
 
   var ascisse = parseInt(x / xSize);

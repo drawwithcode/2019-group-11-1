@@ -3,6 +3,7 @@
 //-------variables
 //var pokeball;
 var buttonBACK;
+var buttonBACKh1;
 
 //-------preloading the assets
 function preload() {
@@ -23,19 +24,8 @@ function setup() {
 
   //-------button BACK
   buttonBACK = createP('< back');
-  buttonBACK.style('margin-top', "80px");
-  buttonBACK.style('margin-left', "40px");
-  buttonBACK.style('color', "#415b7e");
-  buttonBACK.style('font-family', "VT323");
-  buttonBACK.style('font-size', "60px");
-  buttonBACK.style('font-style', "italic");
-  buttonBACK.style('text-align', "left");
-
+  buttonBACK.id("buttonBACK");
   buttonBACK.touchStarted(clickButton);
-
-
-
-
 
 
   // var url_string = window.location.href;

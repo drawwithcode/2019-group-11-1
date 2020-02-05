@@ -100,6 +100,7 @@ function fillRectangle(x, y) {
 
   var ascisse = parseInt(x / xSize);
   var ordinate = parseInt(y / ySize);
+
   //qui hai già cliccato!
   if(grid[ascisse][ordinate] == 1) {
 	alert("Qui hai già cliccato");
@@ -125,7 +126,7 @@ function checkCompletition(x, y) {
 
   filter(BLUR, 10);
   imageMode(CENTER);
-  //image(star, width / 2, height / 2, 200, 200)
+  image(star, width / 2, height / 2, 200, 200)
   alert("Task Completed");
 
   //refresh!

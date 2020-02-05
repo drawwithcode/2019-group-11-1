@@ -1,4 +1,4 @@
-//PLAY
+//-------PLAY
 
 function preload() {
   //no = loadImage("./assets/no.png");
@@ -34,7 +34,7 @@ function setup() {
   noFill()
 
 
-  //griglia di appoggio per il controllo finale
+  //-------griglia di appoggio per il controllo finale
   for (var i = 0; i < grid.length; i++) {
     grid[i] = new Array(colonne);
     for (var k = 0; k < grid.length; k++) {
@@ -42,7 +42,7 @@ function setup() {
     }
   }
 
-  //griglia di quadrati
+  //-------griglia di quadrati
   for (var i = 0; i < righe; i++) {
     for (var y = 0; y < colonne; y++) {
 
@@ -56,15 +56,9 @@ function draw() {
 
 }
 
-// Callback function called when a new message comes from the server
-// Data parameters will contain the received data
+//-------Callback function called when a new message comes from the server
+//-------Data parameters will contain the received data
 function newDrawing(data) {
-
-  //POSIZIONE SBAGLIATA MA GRADIENTI INTERESSANTI
-  // stroke(255);
-  // strokeWeight(2)
-  // noFill()
-
 
   console.log('received:', data);
   fillRectangle(data.x, data.y);
@@ -74,13 +68,13 @@ function newDrawing(data) {
 
 function mouseClicked() {
 
-  // create an object containing the mouse position
+  //-------create an object containing the mouse position
   var data = {
     x: mouseX,
     y: mouseY
   }
 
-  // ONLY ONE CLICK (non so perchè non funzioni con altri numeri)
+  //-------ONLY ONE CLICK (non so perchè non funzioni con altri numeri)
 
   if (executed == 1) {
     alert("don't you dare!");
@@ -111,7 +105,7 @@ function fillRectangle(x, y) {
   checkCompletition(ascisse, ordinate);
 }
 
-//controllo che tutti i valori siano a 1
+//-------controllo che tutti i valori siano a 1
 function checkCompletition(x, y) {
 
   grid[x][y] = 1;
@@ -134,7 +128,7 @@ function checkCompletition(x, y) {
 }
 
 
-//fixed screen when you touch it
+//-------fixed screen when you touch it
 function touchMoved() {
   return false;
 }

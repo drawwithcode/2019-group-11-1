@@ -1,44 +1,44 @@
-//MENU
+//-------MENU
 
 //variables
-var canvas;
-var gameTitle;
+//var canvas;
+//var gameTitle;
 var aboutTheGame;
 var playTheGame;
 var leaderboard;
 
-//preloading assets
+//-------preloading assets
 function preload() {
   gameTitle = loadImage("./assets/2NT.png");
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
-  canvas.position(0, 0);
-  canvas.style("z-index", "-1");
+  // canvas = createCanvas(windowWidth, windowHeight);
+  // canvas.position(0, 0);
+  // canvas.style("z-index", "-1");
 
-  background(139, 215, 232);
+  //background(139, 215, 232);
   textSize(32)
 
-  //2NT LOGO in the center
-  imageMode(CENTER);
-  image(gameTitle, windowWidth / 2, windowHeight / 3, gameTitle.width / 6, gameTitle.height / 6);
+  //-------2NT LOGO in the center
+  // imageMode(CENTER);
+  // image(gameTitle, windowWidth / 2, windowHeight / 3, gameTitle.width / 6, gameTitle.height / 6);
 
-  //ABOUT BUTTON
-  aboutTheGame = createP('(about)');
-  aboutTheGame.style('margin-top', "800px");
+  //-------ABOUT BUTTON
+  aboutTheGame = createP('--{ about }--');
+  aboutTheGame.style('margin-top', "40px");
   // aboutTheGame.style('color', "#415b7e");
   // aboutTheGame.style('font-family', "courier");
   // aboutTheGame.style('font-size', "80px");
   // aboutTheGame.style('text-align', "center");
   aboutTheGame.touchStarted(clickButtonAbout);
 
-  //PLAY BUTTON
-playTheGame = createP('[play]');
+  //-------PLAY BUTTON
+playTheGame = createP('--{ play }--');
   playTheGame.touchStarted(clickButtonPlay);
 
-  //LEADERBOARD BUTTON
-  leaderboard = createP('{leaderboard}');
+  //-------LEADERBOARD BUTTON
+  leaderboard = createP('--{ leaderboard }--');
   leaderboard.touchStarted(clickButtonLeaderboard);
 
 
@@ -48,13 +48,13 @@ playTheGame = createP('[play]');
   // var myArray = JSON.parse(array_string);
 }
 
-//FUNCTION TO OPEN THE ABOUT PAGE
+//-------FUNCTION TO OPEN THE ABOUT PAGE
 function clickButtonAbout() {
   var myUrl = "about.html"
   window.open(myUrl, "_self");
 }
 
-//FUNCTION TO OPEN THE PLAY PAGE
+//-------FUNCTION TO OPEN THE PLAY PAGE
 function clickButtonPlay() {
   var myUrl = "play.html"
   window.open(myUrl, "_self");
@@ -66,12 +66,12 @@ function clickButtonLeaderboard() {
   window.open(myUrl, "_self");
 }
 
-//fixed screen when you touch it
+//-------fixed screen when you touch it
 function touchMoved() {
   return false;
 }
 
-//function to resize the window
+//-------function to resize the window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }

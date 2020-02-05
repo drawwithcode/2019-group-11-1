@@ -1,10 +1,10 @@
-//ABOUT
+//-------ABOUT
 
-//variables
-var pokeball;
+//-------variables
+//var pokeball;
 var buttonBACK;
 
-//preloading the assets
+//-------preloading the assets
 function preload() {
   pokeball = loadImage("./assets/pokeball.png");
 }
@@ -16,14 +16,14 @@ function setup() {
 
   //background(139, 215, 232);
 
-  //POKEBALL PNG
+  //-------POKEBALL PNG
   // imageMode(CENTER);
   // image(pokeball, width / 2, 200, 150, 150);
 
 
-  //button BACK
+  //-------button BACK
   buttonBACK = createP('< back');
-  buttonBACK.style('margin-top', "60px");
+  buttonBACK.style('margin-top', "80px");
   buttonBACK.style('margin-left', "40px");
   buttonBACK.style('color', "#415b7e");
   buttonBACK.style('font-family', "VT323");
@@ -44,7 +44,7 @@ function setup() {
   // var myArray = JSON.parse(array_string);
 }
 
-//function to return to the menu page
+//-------function to return to the menu page
 function clickButton() {
   var myUrl = "menu.html"
   window.open(myUrl, "_self");
@@ -52,12 +52,12 @@ function clickButton() {
 
 
 
-// //fixed screen when you touch it
+// //-------fixed screen when you touch it
 // function touchMoved() {
 //   return false;
 // }
 
-//function to resize the window
+//-------function to resize the window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }

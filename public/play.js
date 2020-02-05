@@ -1,5 +1,4 @@
 //-------PLAY
-
 function preload() {
   //no = loadImage("./assets/no.png");
   moon = loadImage("./assets/moon.png")
@@ -13,24 +12,29 @@ var colonne = 5;
 var executed = 0;
 var grid = new Array(righe);
 
-function setup() {
+var xSize;
+var ySize;
 
+var clickLimit = 1;
+
+function setup() {
 
   let cnv = createCanvas(640, 800);
   cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 400);
   //background(moon)
-  // Create a new connection using socket.io (imported in index.html)
+
+  //-------Create a new connection using socket.io (imported in index.html)
   socket = io();
+
   // Define which function should be called when a new message
   // comes from the server with type "mouseBroadcast"
   socket.on('mouseBroadcast', newDrawing);
 
-
-  var xSize = 640 / righe;
-  var ySize = 800 / colonne;
+  xSize = 640 / righe;
+  ySize = 800 / colonne;
 
   stroke(255);
-  strokeWeight(2)
+  strokeWeight(4)
   noFill()
 
 
@@ -45,20 +49,23 @@ function setup() {
   //-------griglia di quadrati
   for (var i = 0; i < righe; i++) {
     for (var y = 0; y < colonne; y++) {
+      //ellipse(data.x, data.y, 20);
 
       rect(i * xSize, y * ySize, xSize, ySize);
 
     }
   }
+
+
+
 }
 
-function draw() {
-
-}
+function draw() {}
 
 //-------Callback function called when a new message comes from the server
 //-------Data parameters will contain the received data
 function newDrawing(data) {
+
 
   console.log('received:', data);
   fillRectangle(data.x, data.y);
@@ -68,6 +75,7 @@ function newDrawing(data) {
 
 function mouseClicked() {
 
+
   //-------create an object containing the mouse position
   var data = {
     x: mouseX,
@@ -76,36 +84,37 @@ function mouseClicked() {
 
   //-------ONLY ONE CLICK (non so perchè non funzioni con altri numeri)
 
-  if (executed == 1) {
-    alert("don't you dare!");
+  if (executed >= clickLimit) {
+      alert("don't you dare!");
 
-    return;
+      return;
   }
+
+  var ascisse = parseInt(mouseX / xSize);
+  var ordinate = parseInt(mouseY / ySize);
+
+  if(grid[ascisse][ordinate] == 1) {
+	alert("Qui hai già cliccato");
+	return;
+  }
+
 
   socket.emit('mouse', data);
   console.log('sending: ', mouseX, mouseY);
 
-  fillRectangle(mouseX, mouseY)
-  executed = 1;
+  fillRectangle(mouseX, mouseY);
+
+  executed++;
 }
 
 function fillRectangle(x, y) {
 
-  var xSize = 640 / righe;
-  var ySize = 800 / colonne;
-
   //coloring the rectangle
-  fill(255, 20, 147);
+  fill(255, 20, 147, 120);
   stroke(255)
 
   var ascisse = parseInt(x / xSize);
   var ordinate = parseInt(y / ySize);
-
-  //qui hai già cliccato!
-  if(grid[ascisse][ordinate] == 1) {
-	alert("Qui hai già cliccato");
-	return;
-}
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
 
   checkCompletition(ascisse, ordinate);
@@ -132,7 +141,6 @@ function checkCompletition(x, y) {
   //refresh!
   //location.reload();
 }
-
 
 //-------fixed screen when you touch it
 function touchMoved() {

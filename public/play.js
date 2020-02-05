@@ -1,46 +1,132 @@
 //PLAY
-
-function preload(){
-  // put preload code here
+function preload() {
+  //no = loadImage("./assets/no.png");
+  moon = loadImage("./assets/moon.png")
+  star = loadImage("./assets/twinkle.png")
 }
 
 var socket;
 
+var righe = 5;
+var colonne = 5;
+var executed = 0;
+var grid = new Array(righe);
+
 function setup() {
 
-  // put setup code here
-  createCanvas(windowWidth, windowHeight);
-  background(139, 215,232);
+
+  let cnv = createCanvas(500, 500);
+  cnv.position((windowWidth / 2) - 250, (windowHeight / 2) - 250);
+  background(moon)
   // Create a new connection using socket.io (imported in index.html)
   socket = io();
   // Define which function should be called when a new message
   // comes from the server with type "mouseBroadcast"
-  socket.on('mouseBroadcast', newDrawing)
+  socket.on('mouseBroadcast', newDrawing);
 
+
+  var xSize = 500 / righe;
+  var ySize = 500 / colonne;
+
+  stroke(255);
+  strokeWeight(2)
+  noFill()
+
+
+  //griglia di appoggio per il controllo finale
+  for (var i = 0; i < grid.length; i++) {
+    grid[i] = new Array(colonne);
+    for (var k = 0; k < grid.length; k++) {
+      grid[i][k] = 0;
+    }
+  }
+
+  for (var i = 0; i < righe; i++) {
+    for (var y = 0; y < colonne; y++) {
+      //ellipse(data.x, data.y, 20);
+
+      rect(i * xSize, y * ySize, xSize, ySize);
+
+    }
+  }
 }
+
+function draw() {}
+
 // Callback function called when a new message comes from the server
 // Data parameters will contain the received data
-function newDrawing(data){
-	console.log('received:', data)
-	noStroke();
-	fill('yellow');
-	ellipse(data.x, data.y, 20);
+function newDrawing(data) {
+
+  //POSIZIONE SBAGLIATA MA GRADIENTI INTERESSANTI
+  // stroke(255);
+  // strokeWeight(2)
+  // noFill()
+
+
+  console.log('received:', data);
+  fillRectangle(data.x, data.y);
 
 }
 
-function mouseDragged() {
-	console.log('sending: ',mouseX, mouseY);
-	noStroke();
-	fill(255);
 
-	// create an object containing the mouse position
-	var data = {
-		x: mouseX,
-		y: mouseY
-	}
-	// send the object to server,
-	// tag it as "mouse" event
-	socket.emit('mouse', data)
+function mouseClicked() {
 
-	ellipse(mouseX, mouseY, 20)
+
+  // create an object containing the mouse position
+  var data = {
+    x: mouseX,
+    y: mouseY
+  }
+
+  // ONLY ONE CLICK (non so perchè non funzioni con altri numeri)
+
+    if (executed == 1) {
+      alert("don't you dare!");
+
+      return;
+    }
+
+  socket.emit('mouse', data);
+  console.log('sending: ', mouseX, mouseY);
+
+  fillRectangle(mouseX, mouseY)
+  executed = 1;
+}
+
+function fillRectangle(x, y) {
+
+  var xSize = 500 / righe;
+  var ySize = 500 / colonne;
+
+  //coloring the rectangle
+  fill(255, 20, 147, 120);
+  stroke(255)
+
+  var ascisse = parseInt(x / xSize);
+  var ordinate = parseInt(y / ySize);
+  rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
+
+  checkCompletition(ascisse, ordinate);
+}
+
+//controllo che tutti i valori siano a 1
+function checkCompletition(x, y) {
+
+  grid[x][y] = 1;
+
+  for (var i = 0; i < grid.length; i++) {
+    for (var y = 0; y < grid[i].length; y++) {
+      if (grid[i][y] == 0) {
+        return;
+      }
+    }
+  }
+
+  filter(BLUR, 10);
+  imageMode(CENTER);
+  image(star, width / 2, height / 2, 200, 200)
+  //alert("Task Completed");
+
+  //refresh!
+  location.reload();
 }

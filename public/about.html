@@ -11,7 +11,7 @@
 
   <style>
     body {
-      background: linear-gradient(-45deg , #415b7e, #8bd7e8, #8bd7e8, #8bd7e8, #ffffff );
+      background: linear-gradient(-45deg, #415b7e, #8bd7e8, #8bd7e8, #8bd7e8, #ffffff);
       background-size: 10% 5%;
       animation: gradient 15s ease infinite;
     }
@@ -52,18 +52,29 @@
 
     h1 {
       margin-left: 40px;
-      margin-top: 350px;
+      margin-top: 100px;
       font-family: "VT323";
       font-size: 60px;
       text-align: center;
       color: #1d3651;
     }
+
+    #pokeball {
+      /*per centrare le immagini*/
+      display: block;
+      width: 25%;
+      height: 25%;
+      margin-top: 120px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
   </style>
   <script src="p5.min.js"></script>
   <script src="p5.sound.min.js"></script>
   <script src="about.js"></script>
 </head>
-
+<img id="pokeball" src="./assets/pokeball.png">
 <div>
   <h1>Welcome runners!</h1>
   <p id="about">Games Done Quick has some news for you this year. <br><br> GDQ is all about running games at maximum speed and we know how much people like to do that! <br><br>during this year GDQ event you will be able to compete as a team to break

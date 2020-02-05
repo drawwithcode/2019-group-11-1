@@ -17,8 +17,8 @@ function setup() {
   //background(139, 215, 232);
 
   //POKEBALL PNG
-  imageMode(CENTER);
-  image(pokeball, width / 2, 200, 150, 150);
+  // imageMode(CENTER);
+  // image(pokeball, width / 2, 200, 150, 150);
 
 
   //button BACK

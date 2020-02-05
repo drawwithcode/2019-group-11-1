@@ -5,7 +5,7 @@ var pokeball;
 var buttonBACK;
 
 //preloading the assets
-function preload(){
+function preload() {
   pokeball = loadImage("./assets/pokeball.png");
 }
 
@@ -18,7 +18,7 @@ function setup() {
 
   //POKEBALL PNG
   imageMode(CENTER);
-  image(pokeball,width/2, 200, 150, 150);
+  image(pokeball, width / 2, 200, 150, 150);
 
 
   //button BACK
@@ -28,7 +28,7 @@ function setup() {
   buttonBACK.style('color', "#415b7e");
   buttonBACK.style('font-family', "VT323");
   buttonBACK.style('font-size', "60px");
-  //buttonBACK.style('font-style', "italic");
+  buttonBACK.style('font-style', "italic");
   buttonBACK.style('text-align', "left");
 
   buttonBACK.touchStarted(clickButton);

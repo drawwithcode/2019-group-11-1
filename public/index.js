@@ -18,10 +18,7 @@ function setup() {
   //button ENTER
   buttonENTER = createP('enter');
   buttonENTER.style('margin-top', "1200px");
-  buttonENTER.style('color', "#415b7e");
-  buttonENTER.style('font-family', "courier");
-  buttonENTER.style('font-size', "100px");
-  buttonENTER.style('text-align', "center");
+
 
   buttonENTER.touchStarted(clickButton);
 

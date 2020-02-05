@@ -52,10 +52,10 @@ function clickButton() {
 
 
 
-//fixed screen when you touch it
-function touchMoved() {
-  return false;
-}
+// //fixed screen when you touch it
+// function touchMoved() {
+//   return false;
+// }
 
 //function to resize the window
 function windowResized() {

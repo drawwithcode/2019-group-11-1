@@ -130,3 +130,9 @@ function checkCompletition(x, y) {
   //refresh!
   location.reload();
 }
+
+
+//fixed screen when you touch it
+function touchMoved() {
+  return false;
+}

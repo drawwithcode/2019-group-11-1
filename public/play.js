@@ -112,8 +112,7 @@ function fillRectangle(x, y) {
   var ascisse = parseInt(x / xSize);
   var ordinate = parseInt(y / ySize);
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
-  //imageMode(CORNER)
-  image(diam, ascisse * xSize + 5, ordinate * ySize + 5, xSize, ySize)
+  image(diam, ascisse * xSize + 50, ordinate * ySize + 50, xSize/2, ySize/2)
 
 
   checkCompletition(ascisse, ordinate);

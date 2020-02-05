@@ -100,6 +100,11 @@ function fillRectangle(x, y) {
 
   var ascisse = parseInt(x / xSize);
   var ordinate = parseInt(y / ySize);
+  //qui hai già cliccato!
+  if(grid[ascisse][ordinate] == 1) {
+	alert("Qui hai già cliccato");
+	return;
+}
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
 
   checkCompletition(ascisse, ordinate);

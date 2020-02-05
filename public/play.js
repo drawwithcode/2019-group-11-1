@@ -1,4 +1,5 @@
 //PLAY
+
 function preload() {
   //no = loadImage("./assets/no.png");
   moon = loadImage("./assets/moon.png")
@@ -25,8 +26,8 @@ function setup() {
   socket.on('mouseBroadcast', newDrawing);
 
 
-  var xSize = 500 / righe;
-  var ySize = 500 / colonne;
+  var xSize = 800 / righe;
+  var ySize = 800 / colonne;
 
   stroke(255);
   strokeWeight(2)
@@ -41,9 +42,9 @@ function setup() {
     }
   }
 
+  //griglia di quadrati
   for (var i = 0; i < righe; i++) {
     for (var y = 0; y < colonne; y++) {
-      //ellipse(data.x, data.y, 20);
 
       rect(i * xSize, y * ySize, xSize, ySize);
 
@@ -71,7 +72,6 @@ function newDrawing(data) {
 
 function mouseClicked() {
 
-
   // create an object containing the mouse position
   var data = {
     x: mouseX,
@@ -80,11 +80,11 @@ function mouseClicked() {
 
   // ONLY ONE CLICK (non so perchè non funzioni con altri numeri)
 
-    if (executed == 1) {
-      alert("don't you dare!");
+  if (executed == 1) {
+    alert("don't you dare!");
 
-      return;
-    }
+    return;
+  }
 
   socket.emit('mouse', data);
   console.log('sending: ', mouseX, mouseY);

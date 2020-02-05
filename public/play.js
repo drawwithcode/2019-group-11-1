@@ -1,6 +1,6 @@
 //-------PLAY
 function preload() {
-  //no = loadImage("./assets/no.png");
+  diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
   star = loadImage("./assets/twinkle.png")
 }
@@ -82,11 +82,9 @@ function mouseClicked() {
     y: mouseY
   }
 
-  //-------ONLY ONE CLICK (non so perchè non funzioni con altri numeri)
-
+  //-------ONLY ONE CLICK
   if (executed >= clickLimit) {
       alert("don't you dare!");
-
       return;
   }
 
@@ -101,9 +99,7 @@ function mouseClicked() {
 
   socket.emit('mouse', data);
   console.log('sending: ', mouseX, mouseY);
-
   fillRectangle(mouseX, mouseY);
-
   executed++;
 }
 
@@ -116,6 +112,8 @@ function fillRectangle(x, y) {
   var ascisse = parseInt(x / xSize);
   var ordinate = parseInt(y / ySize);
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
+  image(diam, ascisse * xSize, ordinate * ySize, xSize/2, ySize/2)
+
 
   checkCompletition(ascisse, ordinate);
 }

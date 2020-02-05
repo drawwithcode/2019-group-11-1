@@ -16,7 +16,7 @@ var grid = new Array(righe);
 function setup() {
 
 
-  let cnv = createCanvas(1000, 1000);
+  let cnv = createCanvas(800, 800);
   cnv.position((windowWidth / 2) - 250, (windowHeight / 2) - 250);
   background(moon)
   // Create a new connection using socket.io (imported in index.html)
@@ -26,8 +26,8 @@ function setup() {
   socket.on('mouseBroadcast', newDrawing);
 
 
-  var xSize = 1000 / righe;
-  var ySize = 1000 / colonne;
+  var xSize = 800 / righe;
+  var ySize = 800 / colonne;
 
   stroke(255);
   strokeWeight(2)
@@ -95,8 +95,8 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
-  var xSize = 1000 / righe;
-  var ySize = 1000 / colonne;
+  var xSize = 800 / righe;
+  var ySize = 800 / colonne;
 
   //coloring the rectangle
   fill(255, 20, 147, 120);

@@ -30,6 +30,8 @@ var ySize;
 
 var clickLimit = 1;
 
+var myVar;
+
 function setup() {
   strokeWeight(4);
   let cnv = createCanvas(640, 800);
@@ -85,7 +87,7 @@ let decseconds = 0;
     }
   }
 
-  setInterval(timeIt, 100);
+  myVar = setInterval(timeIt, 100);
 
 
 
@@ -167,6 +169,8 @@ function checkCompletition(x, y) {
 
   //refresh!
   //location.reload();
+
+  clearInterval(myVar);
 }
 
 //-------fixed screen when you touch it

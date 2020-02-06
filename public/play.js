@@ -1,5 +1,17 @@
 //-------PLAY
 
+var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
+  'pikachu', 'charmander', 'squirtle', 'bulbasaur', 'kirby',
+  'donkey kong', 'toad', 'link', 'princess zelda', 'samus',
+  'master chief', 'kratos', 'solid snake', 'lara croft', 'ezio auditore',
+'chun-li', 'duke nukem', 'mega man', 'sephiroth', 'cloud strife',
+'rayman', 'spyro', 'crash bandicoot', 'nathan drake', 'sonic the hedgehog',
+'subzero', 'scorpion', 'pacman', 'geralt of rivia', 'vault boy',
+'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
+'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
+'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
+'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
+
 function preload() {
   diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
@@ -58,28 +70,27 @@ function setup() {
   }
 
 
-//-----TIMER
-let seconds = 0;
+  //-----TIMER
+  let seconds = 0;
 let decseconds = 0;
-
-  var timer=select("#timer");
+  var timer = select("#timer");
   timer.html(seconds + "." + decseconds);
 
-  function timeIt(){
-    decseconds ++;
+  function timeIt() {
+    decseconds++;
     timer.html(seconds + "." + decseconds);
-    if (decseconds >= 9){
+    if (decseconds >= 9) {
       decseconds -= 9;
-      seconds ++;
+      seconds++;
     }
-   }
+  }
 
   setInterval(timeIt, 100);
 
 
-}
 
-function draw() {}
+
+}
 
 //-------Callback function called when a new message comes from the server
 //-------Data parameters will contain the received data
@@ -93,8 +104,6 @@ function newDrawing(data) {
 
 
 function mouseClicked() {
-
-
   //-------create an object containing the mouse position
   var data = {
     x: mouseX,
@@ -103,16 +112,16 @@ function mouseClicked() {
 
   //-------ONLY ONE CLICK
   if (executed >= clickLimit) {
-      alert("don't you dare!");
-      return;
+    alert("don't you dare!");
+    return;
   }
 
   var ascisse = parseInt(mouseX / xSize);
   var ordinate = parseInt(mouseY / ySize);
 
-  if(grid[ascisse][ordinate] == 1) {
-	alert("Qui hai già cliccato");
-	return;
+  if (grid[ascisse][ordinate] == 1) {
+    alert("Qui hai già cliccato");
+    return;
   }
 
 
@@ -132,7 +141,7 @@ function fillRectangle(x, y) {
   var ordinate = parseInt(y / ySize);
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
   imageMode(CENTER);
-  image(diam, ascisse * xSize + xSize/2 , ordinate * ySize + ySize/2 , xSize/2, ySize/2);
+  image(diam, ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
 
 
   checkCompletition(ascisse, ordinate);

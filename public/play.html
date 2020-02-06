@@ -7,22 +7,11 @@
   <title>💙2NT - play</title>
   <style>
   body {
-  	background: linear-gradient(-45deg, #80ffff, #66c2ff, #66a3ff, #99ddff);
-  	background-size: 400% 400%;
-  	animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #80ffff, #66c2ff, #66a3ff, #99ddff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
 
-  @keyframes gradient {
-  	0% {
-  		background-position: 0% 50%;
-  	}
-  	50% {
-  		background-position: 100% 50%;
-  	}
-  	100% {
-  		background-position: 0% 50%;
-  	}
-  }
 
   </style>
   <script src="/socket.io/socket.io.js"></script>
@@ -30,6 +19,7 @@
   <script src="p5.sound.min.js"></script>
   <script src="play.js"></script>
 </head>
+<p id="timer"></p>
 
 <body>
 

@@ -1,4 +1,5 @@
 //-------PLAY
+
 function preload() {
   diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
@@ -56,6 +57,24 @@ function setup() {
     }
   }
 
+
+//-----TIMER
+let seconds = 0;
+let decseconds = 0;
+
+  var timer=select("#timer");
+  timer.html(seconds + "." + decseconds);
+
+  function timeIt(){
+    decseconds ++;
+    timer.html(seconds + "." + decseconds);
+    if (decseconds >= 9){
+      decseconds -= 9;
+      seconds ++;
+    }
+   }
+
+  setInterval(timeIt, 100);
 
 
 }

@@ -107,7 +107,7 @@ function newDrawing(data) {
 
 }
 
-
+//Conteggio persone!
 function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;

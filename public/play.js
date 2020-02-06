@@ -164,6 +164,7 @@ function checkCompletition(x, y) {
   imageMode(CENTER);
   image(star, width / 2, height / 2, 200, 200)
   alert("Task Completed");
+    timer.stop();
 
   //refresh!
   //location.reload();

@@ -162,10 +162,8 @@ function checkCompletition(x, y) {
 
   filter(BLUR, 10);
   imageMode(CENTER);
-  image(star, width / 2, height / 2, 200, 200)
+  image(diam, width / 2, height / 2, 200, 200)
   alert("Task Completed");
-    //prova timer che si ferma!
-    "#timer".stop();
 
   //refresh!
   //location.reload();

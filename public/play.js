@@ -22,7 +22,9 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
   'crimson', 'cyan', 'kaki'
 ];
 
+var yay;
 var imageArray = [];
+
 //-----preloading the assets
 function preload() {
   //imageArray
@@ -31,7 +33,7 @@ function preload() {
   imageArray[2] = loadImage("./assets/twinkle.png"); // star
   imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
 
-  var yay = loadImage("./assets/YAY.png");
+  yay = loadImage("./assets/YAY.png");
 }
 
 var socket;

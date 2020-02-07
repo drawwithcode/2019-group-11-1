@@ -34,6 +34,7 @@ function preload() {
   imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
 
   yay = loadImage("./assets/YAY.png");
+  yellow = loadImage("./assets/yellow.png")
 }
 
 var socket;
@@ -132,9 +133,10 @@ function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
-  if (data.count >= 5) {
-    image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
-
+  //prova per verificare il numero di persone!!
+  if (data.count >= 16) {
+    imageMode(CENTER)
+    image(yellow, width / 2, height / 2, yay.width / 5, yay.height / 5);
   }
 
 }

@@ -116,12 +116,6 @@ function setup() {
   myVar = setInterval(timeIt, 100);
 }
 
-function draw() {
-  if (guests.innerHTML >= "10"){
-    image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
-  }
-}
-
 
 //-------Callback function called when a new message comes from the server
 //-------Data parameters will contain the received data

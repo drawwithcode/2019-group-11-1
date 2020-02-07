@@ -21,7 +21,7 @@ function preload() {
 var socket;
 
 var righe = 4;
-var colonne = 5;
+var colonne = 4;
 var executed = 0;
 var grid = new Array(righe);
 
@@ -34,8 +34,8 @@ var myVar;
 
 function setup() {
   strokeWeight(4);
-  let cnv = createCanvas(640, 800);
-  cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 400);
+  let cnv = createCanvas(640, 640);
+  cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 320);
   //background(moon)
 
   //-------Create a new connection using socket.io (imported in index.html)
@@ -49,7 +49,7 @@ function setup() {
 
 
   xSize = 640 / righe;
-  ySize = 800 / colonne;
+  ySize = 640 / colonne;
 
   stroke(51, 73, 108, 120);
   strokeWeight(4);

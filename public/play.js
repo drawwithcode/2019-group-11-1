@@ -188,10 +188,13 @@ function checkCompletition(x, y) {
     }
   }
 
-  filter(BLUR, 10);
+  //filter(BLUR, 10);
   clearInterval(myVar);
   imageMode(CENTER);
-  image(yay, width / 2, height / 2, yay.width/4, yay.height/4);
+  rectMode(CENTER);
+  fill(51, 73, 108, 120);
+  rect(0, 0 640, 640);
+  image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
   alert("Task Completed");
 
   //refresh!

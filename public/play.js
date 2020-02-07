@@ -80,9 +80,7 @@ function setup() {
   //-----TIMER
   let seconds = 0;
 let decseconds = 0;
-var timer = createP("0.0");
-timer.id("timer");
-
+  var timer = select("#timer");
   timer.html(seconds + "." + decseconds);
 
   function timeIt() {
@@ -187,9 +185,8 @@ function checkCompletition(x, y) {
   //location.reload();
 
   clearInterval(myVar);
-
-  //console log;
   console.log(roomNames[Math.floor(random(roomNames.length))]+" " + timer.innerHTML + "s");
+
 }
 
 

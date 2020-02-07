@@ -95,20 +95,20 @@ function setup() {
 
   //-----TIMER
   let seconds = 0;
-  let decseconds = 0;
+  let centseconds = 0;
   var timer = createP('0.0');
   timer.id('timer');
-  timer.html(seconds + "." + decseconds);
+  timer.html(seconds + "." + centseconds);
 
   function timeIt() {
     decseconds++;
-    timer.html(seconds + "." + decseconds);
-    if (decseconds >= 9) {
-      decseconds -= 9;
+    timer.html(seconds + "." + centseconds);
+    if (centseconds >= 99) {
+      centseconds -= 99;
       seconds++;
     }
   }
-  myVar = setInterval(timeIt, 100);
+  myVar = setInterval(timeIt, 1000);
 }
 
 //-------Callback function called when a new message comes from the server

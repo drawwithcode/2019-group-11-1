@@ -24,6 +24,7 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 
 var yay;
 var imageArray = [];
+var actualRoomName;
 
 //-----preloading the assets
 function preload() {
@@ -124,6 +125,9 @@ function newDrawing(data) {
   console.log('received:', data);
   fillRectangle(data.x, data.y);
 
+
+  actualRoomName = createP('');
+
 }
 
 //Conteggio persone!
@@ -206,6 +210,8 @@ function checkCompletition(x, y) {
 
   //console log with time
   console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+
+  actualRoomName.html(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))]);
 }
 
 

@@ -90,7 +90,7 @@ function setup() {
       seconds++;
     }
   }
-  setInterval(timeIt, 100);
+  myVar = setInterval(timeIt, 100);
 }
 
 //-------Callback function called when a new message comes from the server
@@ -180,7 +180,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
 //console log with time
-  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
+  //console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 }
 
 

@@ -12,7 +12,6 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
 'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
 'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
 
-
 function preload() {
   diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
@@ -78,23 +77,23 @@ function setup() {
 
   //-----TIMER
   let seconds = 0;
-    let decseconds = 0;
-    var timer = createP('0.0');
-    timer.id('timer');
+let decseconds = 0;
+  var timer = select("#timer");
+  timer.html(seconds + "." + decseconds);
+
+  function timeIt() {
+    decseconds++;
     timer.html(seconds + "." + decseconds);
-
-
-    function timeIt() {
-      decseconds++;
-      timer.html(seconds + "." + decseconds);
-      if (decseconds >= 9) {
-        decseconds -= 9;
-        seconds++;
-      }
+    if (decseconds >= 9) {
+      decseconds -= 9;
+      seconds++;
     }
+  }
 
-    setInterval(timeIt, 100);
-}
+  myVar = setInterval(timeIt, 100);
+
+
+
 
 }
 
@@ -159,8 +158,6 @@ function fillRectangle(x, y) {
 
 
   checkCompletition(ascisse, ordinate);
-  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
-
 }
 
 //-------controllo che tutti i valori siano a 1

@@ -185,7 +185,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
   clearInterval(myVar);
-  console.log(roomNames[Math.floor(random(roomNames.length))]+" " + timer.innerHTML + "s");
+  //console.log(roomNames[Math.floor(random(roomNames.length))]+" " + timer.innerHTML + "s");
 
 }
 

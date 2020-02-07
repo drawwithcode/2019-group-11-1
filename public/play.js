@@ -174,13 +174,13 @@ function checkCompletition(x, y) {
   clearInterval(myVar);
   imageMode(CENTER);
   image(diam, width / 2, height / 2, 200, 200)
-  //alert("Task Completed");
+  alert("Task Completed");
 
   //refresh!
   //location.reload();
 
 //console log with time
-  //console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
+  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 }
 
 

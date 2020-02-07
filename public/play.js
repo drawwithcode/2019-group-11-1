@@ -94,21 +94,26 @@ function setup() {
 
 
   //-----TIMER
+  let minutes = 0;
   let seconds = 0;
-  let centseconds = 0;
-  var timer = createP('0.0');
+  let decseconds = 0;
+  var timer = createP('0:00.0');
   timer.id('timer');
-  timer.html(seconds + "." + centseconds);
+  timer.html(minutes + ":" + seconds + "." + decseconds);
 
   function timeIt() {
     decseconds++;
-    timer.html(seconds + "." + centseconds);
-    if (centseconds >= 99) {
-      centseconds -= 99;
+    timer.html(minutes + ":" + seconds + "." + decseconds);
+    if (decseconds >= 9) {
+      decseconds -= 9;
       seconds++;
     }
+    if (seconds >= 59){
+      seconds -= 59;
+      minutes++;
+    }
   }
-  myVar = setInterval(timeIt, 1000);
+  myVar = setInterval(timeIt, 100);
 }
 
 //-------Callback function called when a new message comes from the server
@@ -200,7 +205,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
   //console log with time
-  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s");
+  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + ":" + timer.innerHTML);
 }
 
 

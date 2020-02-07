@@ -136,7 +136,7 @@ function handleCounter(data) {
 }
 
 function draw() {
-  if (guests.innerHTML = 20){
+  if (guests.innerHTML = 67){
     image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
   }
 }

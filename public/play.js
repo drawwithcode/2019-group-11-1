@@ -10,7 +10,7 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
   'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
   'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
   'the Z-shaped tetris block', 'paarthurnax', 'tracer', 'sora', 'mickey mouse',
-  'sans', 'gordon freeman', 'metal slug', 'leon kennedy'
+  'sans', 'gordon freeman', 'metal slug', 'leon kennedy', 'creeper'
 ];
 
 var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',

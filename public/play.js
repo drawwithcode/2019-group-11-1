@@ -12,6 +12,8 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
 'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
 'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
 
+var arrayImages = [diam, moon, star];
+
 function preload() {
   diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
@@ -107,7 +109,7 @@ function newDrawing(data) {
 
 }
 
-//Conteggio persone!
+//-------Conteggio persone! Visualizzato tramite p HTML
 function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
@@ -155,6 +157,8 @@ function fillRectangle(x, y) {
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
   imageMode(CENTER);
   image(diam, ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
+  //prova 
+  image(arrayImages, ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2 )
 
 
   checkCompletition(ascisse, ordinate);

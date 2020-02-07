@@ -179,7 +179,7 @@ function checkCompletition(x, y) {
   filter(BLUR, 10);
   imageMode(CENTER);
   image(diam, width / 2, height / 2, 200, 200)
-  //alert("Task Completed");
+  alert("Task Completed");
 
   //refresh!
   //location.reload();

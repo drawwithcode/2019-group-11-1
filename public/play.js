@@ -117,7 +117,7 @@ function setup() {
 }
 
 function draw() {
-  if (guests.innerHTML = "10"){
+  if (guests.innerHTML >= "10"){
     image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
   }
 }

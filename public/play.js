@@ -199,13 +199,13 @@ function checkCompletition(x, y) {
   fill(51, 73, 108, 120);
   rect(0, 0,  640, 640);
   image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
-  alert("Task Completed");
+  //alert("YAY!");
 
   //refresh!
   //location.reload();
 
   //console log with time
-  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + ":" + timer.innerHTML);
+  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
 }
 
 

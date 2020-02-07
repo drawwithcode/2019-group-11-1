@@ -159,6 +159,7 @@ function fillRectangle(x, y) {
 
 
   checkCompletition(ascisse, ordinate);
+  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 }
 
 //-------controllo che tutti i valori siano a 1

@@ -154,7 +154,7 @@ function fillRectangle(x, y) {
 
 
   checkCompletition(ascisse, ordinate);
-  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
+
 }
 
 //-------controllo che tutti i valori siano a 1
@@ -179,6 +179,9 @@ function checkCompletition(x, y) {
   //location.reload();
 
   clearInterval(myVar);
+  
+//console log with time
+  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 }
 
 

@@ -22,7 +22,7 @@ function setup() {
   leaderboard.touchStarted(clickButtonLeaderboard);
 
   //-------LINK TO SITE BUTTON
-  linkToSite = createP('GDQ website');
+  linkToSite = createP('.GDQ website.');
   linkToSite.id('linkToSite');
   linkToSite.touchStarted(clickButtonSite);
 }

@@ -132,6 +132,10 @@ function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
+  if (data.count >= 5) {
+    image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
+
+  }
 
 }
 

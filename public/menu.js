@@ -4,6 +4,7 @@
 var aboutTheGame;
 var playTheGame;
 var leaderboard;
+var linkToSite;
 
 function setup() {
 
@@ -13,13 +14,17 @@ function setup() {
   aboutTheGame.touchStarted(clickButtonAbout);
 
   //-------PLAY BUTTON
-playTheGame = createP('--{ play }--');
+  playTheGame = createP('--{ play }--');
   playTheGame.touchStarted(clickButtonPlay);
 
   //-------LEADERBOARD BUTTON
   leaderboard = createP('--{ leaderboard }--');
   leaderboard.touchStarted(clickButtonLeaderboard);
 
+  //-------LINK TO SITE BUTTON
+  linkToSite = createP('GDQ website');
+  linkToSite.id('linkToSite');
+  linkToSite.touchStarted(clickButtonSite);
 }
 
 //-------FUNCTION TO OPEN THE ABOUT PAGE
@@ -37,6 +42,12 @@ function clickButtonPlay() {
 //-------FUNCTION TO OPEN THE LEADERBOARD PAGE
 function clickButtonLeaderboard() {
   var myUrl = "leaderboard.html"
+  window.open(myUrl, "_self");
+}
+
+//-------FUNCTION TO OPEN THE GDQ WEBSITE
+function clickButtonSite() {
+  var myUrl = "https://gamesdonequick.com/"
   window.open(myUrl, "_self");
 }
 

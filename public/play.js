@@ -77,8 +77,9 @@ function setup() {
 
   //-----TIMER
   let seconds = 0;
-let decseconds = 0;
-  var timer = select("#timer");
+  let decseconds = 0;
+  var timer = createP('0.0');
+  timer.id('timer');
   timer.html(seconds + "." + decseconds);
 
   function timeIt() {
@@ -90,7 +91,7 @@ let decseconds = 0;
     }
   }
 
-  myVar = setInterval(timeIt, 100);
+  setInterval(timeIt, 100);
 
 
 

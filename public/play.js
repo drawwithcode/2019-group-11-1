@@ -12,6 +12,7 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
 'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
 'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
 
+
 function preload() {
   diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
@@ -77,23 +78,27 @@ function setup() {
 
   //-----TIMER
   let seconds = 0;
-let decseconds = 0;
-  var timer = select("#timer");
-  timer.html(seconds + "." + decseconds);
-
-  function timeIt() {
-    decseconds++;
+    let decseconds = 0;
+    var timer = createP('0.0');
+    timer.id('timer');
     timer.html(seconds + "." + decseconds);
-    if (decseconds >= 9) {
-      decseconds -= 9;
-      seconds++;
+    timer.touchStarted(timerButton);
+
+    function timeIt() {
+      decseconds++;
+      timer.html(seconds + "." + decseconds);
+      if (decseconds >= 9) {
+        decseconds -= 9;
+        seconds++;
+      }
     }
-  }
 
-  myVar = setInterval(timeIt, 100);
+    setInterval(timeIt, 100);
+}
 
-
-
+//-----console log to see the time
+function timerButton() {
+  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 
 }
 

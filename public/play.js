@@ -4,14 +4,13 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
   'pikachu', 'charmander', 'squirtle', 'bulbasaur', 'kirby',
   'donkey kong', 'toad', 'link', 'princess zelda', 'samus',
   'master chief', 'kratos', 'solid snake', 'lara croft', 'ezio auditore',
-  'chun-li', 'duke nukem', 'mega man', 'sephiroth', 'cloud strife',
-  'rayman', 'spyro', 'crash bandicoot', 'nathan drake', 'sonic the hedgehog',
-  'subzero', 'scorpion', 'pacman', 'geralt of rivia', 'vault boy',
-  'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
-  'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
-  'the Z-shaped tetris block', 'paarthurnax', 'tracer', 'sora', 'mickey mouse',
-  'sans', 'gordon freeman', 'metal slug', 'leon kennedy'
-];
+'chun-li', 'duke nukem', 'mega man', 'sephiroth', 'cloud strife',
+'rayman', 'spyro', 'crash bandicoot', 'nathan drake', 'sonic the hedgehog',
+'subzero', 'scorpion', 'pacman', 'geralt of rivia', 'vault boy',
+'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
+'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
+'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
+'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
 
 function preload() {
   diam = loadImage("./assets/diamond.png");
@@ -45,6 +44,9 @@ function setup() {
   // Define which function should be called when a new message
   // comes from the server with type "mouseBroadcast"
   socket.on('mouseBroadcast', newDrawing);
+  socket.on('counter', handleCounter);
+
+
 
   xSize = 640 / righe;
   ySize = 800 / colonne;
@@ -76,7 +78,8 @@ function setup() {
   //-----TIMER
   let seconds = 0;
   let decseconds = 0;
-  var timer = select("#timer");
+  var timer = createP('0.0');
+  timer.id('timer');
   timer.html(seconds + "." + decseconds);
 
   function timeIt() {
@@ -87,12 +90,7 @@ function setup() {
       seconds++;
     }
   }
-
-  myVar = setInterval(timeIt, 100);
-
-
-
-
+  setInterval(timeIt, 100);
 }
 
 //-------Callback function called when a new message comes from the server
@@ -105,7 +103,7 @@ function newDrawing(data) {
 
 }
 
-//-------Conteggio persone! Visualizzato tramite p HTML
+//Conteggio persone!
 function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
@@ -156,6 +154,7 @@ function fillRectangle(x, y) {
 
 
   checkCompletition(ascisse, ordinate);
+
 }
 
 //-------controllo che tutti i valori siano a 1
@@ -176,13 +175,16 @@ function checkCompletition(x, y) {
   image(diam, width / 2, height / 2, 200, 200)
   alert("Task Completed");
 
-
-  //timer stops when the grid is completed
-  clearInterval(myVar);
-
   //refresh!
   //location.reload();
+
+  clearInterval(myVar);
+
+//console log with time
+  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 }
+
+
 
 //-------fixed screen when you touch it
 function touchMoved() {

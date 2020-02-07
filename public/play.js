@@ -9,7 +9,7 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
   'subzero', 'scorpion', 'pacman', 'geralt of rivia', 'vault boy',
   'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
   'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
-  'the Z-shaped tetris block', 'paarthurnax', 'tracer', 'sora', 'mickey mouse',
+  'Z-shaped tetris block', 'paarthurnax', 'tracer', 'sora', 'mickey mouse',
   'sans', 'gordon freeman', 'metal slug', 'leon kennedy', 'creeper'
 ];
 
@@ -28,8 +28,8 @@ var imageArray = [];
 //-----preloading the assets
 function preload() {
   //imageArray
-  imageArray[0] = loadImage("./assets/diamond.png"); // diamond
-  imageArray[1] = loadImage("./assets/moon.png"); // moon
+  imageArray[0] = loadImage("./assets/rupia.png"); // rupia
+  imageArray[1] = loadImage("./assets/triforce.png"); // triforce
   imageArray[2] = loadImage("./assets/twinkle.png"); // star
   imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
 

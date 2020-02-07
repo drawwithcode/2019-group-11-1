@@ -4,26 +4,31 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
   'pikachu', 'charmander', 'squirtle', 'bulbasaur', 'kirby',
   'donkey kong', 'toad', 'link', 'princess zelda', 'samus',
   'master chief', 'kratos', 'solid snake', 'lara croft', 'ezio auditore',
-'chun-li', 'duke nukem', 'mega man', 'sephiroth', 'cloud strife',
-'rayman', 'spyro', 'crash bandicoot', 'nathan drake', 'sonic the hedgehog',
-'subzero', 'scorpion', 'pacman', 'geralt of rivia', 'vault boy',
-'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
-'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
-'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
-'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
+  'chun-li', 'duke nukem', 'mega man', 'sephiroth', 'cloud strife',
+  'rayman', 'spyro', 'crash bandicoot', 'nathan drake', 'sonic the hedgehog',
+  'subzero', 'scorpion', 'pacman', 'geralt of rivia', 'vault boy',
+  'marcus fenix', 'pyramid head', 'wario', 'waluigi', 'dante',
+  'ryu', 'agent 47', 'dovahkiin', 'mewtwo', 'diablo',
+  'the Z-shaped tetris block', 'paarthurnax', 'tracer', 'sora', 'mickey mouse',
+  'sans', 'gordon freeman', 'metal slug', 'leon kennedy'
+];
 
 var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
-'pink', 'purple', 'lilac', 'green', 'brown',
-'black', 'white', 'grey', 'azure', 'indigo',
-'aquamarine', 'cobalt', 'magenta', 'periwinkle', 'silver',
-'gold', 'turquoise', 'teal', 'apricot', 'ivory',
-'coral', 'amber', 'amethyst', 'beige', 'orchid',
-'crimson', 'cyan', 'kaki'];
+  'pink', 'purple', 'lilac', 'green', 'brown',
+  'black', 'white', 'grey', 'azure', 'indigo',
+  'aquamarine', 'cobalt', 'magenta', 'periwinkle', 'silver',
+  'gold', 'turquoise', 'teal', 'apricot', 'ivory',
+  'coral', 'amber', 'amethyst', 'beige', 'orchid',
+  'crimson', 'cyan', 'kaki'
+];
 
+var imageArray = [];
+//-----preloading the assets
 function preload() {
-  diam = loadImage("./assets/diamond.png");
-  moon = loadImage("./assets/moon.png")
-  star = loadImage("./assets/twinkle.png")
+  imageArray[0] = loadImage("./assets/diamond.png"); // diamond
+  imageArray[1] = loadImage("./assets/moon.png"); // moon
+  imageArray[2] = loadImage("./assets/twinkle.png"); // star
+  imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
 }
 
 var socket;
@@ -115,7 +120,7 @@ function newDrawing(data) {
 function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
-    console.log('received:', data);
+  console.log('received:', data);
 
 }
 
@@ -158,7 +163,7 @@ function fillRectangle(x, y) {
   var ordinate = parseInt(y / ySize);
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
   imageMode(CENTER);
-  image(diam, ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
+  image(imageArray[Math.floor(random(imageArray.length))], ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
 
 
   checkCompletition(ascisse, ordinate);
@@ -187,8 +192,8 @@ function checkCompletition(x, y) {
   //refresh!
   //location.reload();
 
-//console log with time
-  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
+  //console log with time
+  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s");
 }
 
 

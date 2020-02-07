@@ -90,12 +90,7 @@ function setup() {
       seconds++;
     }
   }
-
   setInterval(timeIt, 100);
-
-
-
-
 }
 
 //-------Callback function called when a new message comes from the server

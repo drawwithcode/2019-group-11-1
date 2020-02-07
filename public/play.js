@@ -126,7 +126,7 @@ function newDrawing(data) {
   fillRectangle(data.x, data.y);
 
 
-  actualRoomName = createP('');
+  actualRoomName = createP('------');
 
 }
 

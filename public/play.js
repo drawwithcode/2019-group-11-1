@@ -105,6 +105,14 @@ function newDrawing(data) {
 
 }
 
+//-------Conteggio persone! Visualizzato tramite p HTML
+function handleCounter(data) {
+
+  document.getElementById("guests").innerHTML = data.count;
+    console.log('received:', data);
+
+}
+
 
 function mouseClicked() {
   //-------create an object containing the mouse position

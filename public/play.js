@@ -12,6 +12,14 @@ var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
 'the Z-shaped tetris block','paarthurnax', 'tracer', 'sora', 'mickey mouse',
 'sans', 'gordon freeman', 'metal slug', 'leon kennedy' ];
 
+var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
+'pink', 'purple', 'lilac', 'green', 'brown',
+'black', 'white', 'grey', 'azure', 'indigo',
+'aquamarine', 'cobalt', 'magenta', 'periwinkle', 'silver',
+'gold', 'turquoise', 'teal', 'apricot', 'ivory',
+'coral', 'amber', 'amethyst', 'beige', 'orchid',
+'crimson', 'cyan', 'kaki'];
+
 function preload() {
   diam = loadImage("./assets/diamond.png");
   moon = loadImage("./assets/moon.png")
@@ -180,7 +188,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
 //console log with time
-  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
+  console.log(roomColors[Math.floor(random(roomColors.length))] + roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 }
 
 

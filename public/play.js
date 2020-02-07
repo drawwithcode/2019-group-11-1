@@ -193,7 +193,7 @@ function checkCompletition(x, y) {
   imageMode(CENTER);
   rectMode(CENTER);
   fill(51, 73, 108, 120);
-  rect(0, 0 640, 640);
+  rect(0, 0, 640, 640);
   image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
   alert("Task Completed");
 

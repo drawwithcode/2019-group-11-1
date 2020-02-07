@@ -116,6 +116,7 @@ function setup() {
   myVar = setInterval(timeIt, 100);
 }
 
+
 //-------Callback function called when a new message comes from the server
 //-------Data parameters will contain the received data
 function newDrawing(data) {
@@ -132,6 +133,12 @@ function handleCounter(data) {
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
 
+}
+
+function draw() {
+  if (guests.innerHTML = 20){
+    image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
+  }
 }
 
 

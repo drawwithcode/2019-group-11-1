@@ -82,7 +82,7 @@ function setup() {
     var timer = createP('0.0');
     timer.id('timer');
     timer.html(seconds + "." + decseconds);
-    timer.touchStarted(timerButton);
+
 
     function timeIt() {
       decseconds++;
@@ -95,10 +95,6 @@ function setup() {
 
     setInterval(timeIt, 100);
 }
-
-//-----console log to see the time
-function timerButton() {
-  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
 
 }
 
@@ -163,6 +159,8 @@ function fillRectangle(x, y) {
 
 
   checkCompletition(ascisse, ordinate);
+  console.log(roomNames[Math.floor(random(roomNames.length))] + " " + timer.innerHTML + "s") ;
+
 }
 
 //-------controllo che tutti i valori siano a 1

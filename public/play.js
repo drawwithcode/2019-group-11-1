@@ -25,10 +25,13 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 var imageArray = [];
 //-----preloading the assets
 function preload() {
+  //imageArray
   imageArray[0] = loadImage("./assets/diamond.png"); // diamond
   imageArray[1] = loadImage("./assets/moon.png"); // moon
   imageArray[2] = loadImage("./assets/twinkle.png"); // star
   imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
+
+  var yay = loadImage("./assets/YAY.png");
 }
 
 var socket;
@@ -186,7 +189,7 @@ function checkCompletition(x, y) {
   filter(BLUR, 10);
   clearInterval(myVar);
   imageMode(CENTER);
-  image(diam, width / 2, height / 2, 200, 200)
+  image(yay, width / 2, height / 2, yay.width/4, yay.height/4);
   alert("Task Completed");
 
   //refresh!

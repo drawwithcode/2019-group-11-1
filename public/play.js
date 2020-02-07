@@ -104,12 +104,12 @@ function setup() {
   function timeIt() {
     decseconds++;
     timer.html(minutes + ":" + seconds + "." + decseconds);
-    if (decseconds >= 10) {
-      decseconds -= 10;
+    if (decseconds >= 9.9) {
+      decseconds -= 9.9;
       seconds++;
     }
-    if (seconds >= 60){
-      seconds -= 60;
+    if (seconds >= 59.9){
+      seconds -= 59.9;
       minutes++;
     }
   }

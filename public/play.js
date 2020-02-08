@@ -24,6 +24,7 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 
 var yay;
 var imageArray = [];
+var clicks = 0;
 
 //-----preloading the assets
 function preload() {
@@ -148,6 +149,9 @@ function mouseClicked() {
     x: mouseX,
     y: mouseY
   }
+
+  clicks ++;
+  console.log(clicks);
 
   //-------ONLY ONE CLICK
   if (executed >= clickLimit) {

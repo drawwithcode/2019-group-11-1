@@ -24,6 +24,7 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 
 var yay;
 var imageArray = [];
+var functionTimeIt;
 
 //-----preloading the assets
 function preload() {
@@ -102,7 +103,7 @@ function setup() {
   timer.id('timer');
   timer.html(minutes + ":" + seconds + "." + decseconds);
 
-  function timeIt() {
+  functionTimeit = function timeIt() {
     decseconds++;
     timer.html(minutes + ":" + seconds + "." + decseconds);
     if (decseconds >= 9) {

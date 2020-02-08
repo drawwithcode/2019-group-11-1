@@ -172,6 +172,7 @@ function fillRectangle(x, y) {
       seconds -= 60;
       minutes++;
     }
+    myVar = setInterval(timeIt, 100);
   }
 
 

@@ -157,7 +157,18 @@ function fillRectangle(x, y) {
   timer.id('timer');
   timer.style('display','block');
 
-
+  function timeIt() {
+    decseconds++;
+    timer.html(minutes + ":" + seconds + "." + decseconds);
+    if (decseconds >= 9) {
+      decseconds -= 9;
+      seconds++;
+    }
+    if (seconds >= 60){
+      seconds -= 60;
+      minutes++;
+    }
+  }
   myVar = setInterval(timeIt, 100);
 
 
@@ -174,19 +185,6 @@ function fillRectangle(x, y) {
 
   checkCompletition(ascisse, ordinate);
 
-}
-
-function timeIt() {
-  decseconds++;
-  timer.html(minutes + ":" + seconds + "." + decseconds);
-  if (decseconds >= 9) {
-    decseconds -= 9;
-    seconds++;
-  }
-  if (seconds >= 60){
-    seconds -= 60;
-    minutes++;
-  }
 }
 
 //-------controllo che tutti i valori siano a 1

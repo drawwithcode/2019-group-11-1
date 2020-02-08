@@ -37,7 +37,7 @@ var ySize;
 
 var clickLimit = 1;
 
-var myVar;
+var myVar = setInterval(timeIt, 100);;
 
 //-----preloading the assets
 function preload() {
@@ -173,7 +173,7 @@ function fillRectangle(x, y) {
       minutes++;
     }
   }
-  myVar = setInterval(timeIt, 100);
+
 
 
 

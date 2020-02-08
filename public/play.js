@@ -25,6 +25,18 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 var yay;
 var imageArray = [];
 
+//-----preloading the assets
+function preload() {
+  //imageArray
+  imageArray[0] = loadImage("./assets/rupia.png"); // rupia
+  imageArray[1] = loadImage("./assets/triforce.png"); // triforce
+  imageArray[2] = loadImage("./assets/twinkle.png"); // star
+  imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
+
+  yay = loadImage("./assets/YAY.png");
+  yellow = loadImage("./assets/yellow.png")
+}
+
 var socket;
 
 var righe = 4;
@@ -38,20 +50,6 @@ var ySize;
 var clickLimit = 1;
 
 var myVar;
-
-//-----preloading the assets
-function preload() {
-  //imageArray
-  imageArray[0] = loadImage("./assets/rupia.png"); // rupia
-  imageArray[1] = loadImage("./assets/triforce.png"); // triforce
-  imageArray[2] = loadImage("./assets/twinkle.png"); // star
-  imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
-
-  yay = loadImage("./assets/YAY.png");
-  yellow = loadImage("./assets/yellow.png")
-}
-
-
 
 function setup() {
   strokeWeight(4);
@@ -94,6 +92,14 @@ function setup() {
 
     }
   }
+
+  //-----TIMER
+  let minutes = 0;
+  let seconds = 0;
+  let decseconds = 0;
+  var timer = createP('0:00.0');
+  timer.id('timer');
+  timer.html(minutes + ":" + seconds + "." + decseconds);
 
 
 
@@ -155,13 +161,6 @@ function mouseClicked() {
 function fillRectangle(x, y) {
 
 
-  //-----TIMER
-  let minutes = 0;
-  let seconds = 0;
-  let decseconds = 0;
-  var timer = createP('0:00.0');
-  timer.id('timer');
-  timer.html(minutes + ":" + seconds + "." + decseconds);
 
   function timeIt() {
     decseconds++;
@@ -208,19 +207,6 @@ function checkCompletition(x, y) {
   }
 
   //filter(BLUR, 10);
-  function timeIt() {
-    decseconds++;
-    timer.html(minutes + ":" + seconds + "." + decseconds);
-    if (decseconds >= 9) {
-      decseconds -= 9;
-      seconds++;
-    }
-    if (seconds >= 60){
-      seconds -= 60;
-      minutes++;
-    }
-  }
-  myVar = setInterval(timeIt, 100)
   clearInterval(myVar);
   imageMode(CENTER);
   fill(51, 73, 108, 120);

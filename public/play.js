@@ -24,7 +24,6 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 
 var yay;
 var imageArray = [];
-var clicks = 0;
 
 //-----preloading the assets
 function preload() {
@@ -115,7 +114,6 @@ function setup() {
       minutes++;
     }
   }
-  myVar = setInterval(timeIt, 100);
 }
 
 
@@ -150,9 +148,6 @@ function mouseClicked() {
     y: mouseY
   }
 
-  clicks ++;
-  console.log(clicks);
-
   //-------ONLY ONE CLICK
   if (executed >= clickLimit) {
     //alert("don't you dare!");
@@ -175,6 +170,8 @@ function mouseClicked() {
 }
 
 function fillRectangle(x, y) {
+
+  myVar = setInterval(timeIt, 100);
 
   //coloring the rectangle
   fill(51, 73, 108, 120);

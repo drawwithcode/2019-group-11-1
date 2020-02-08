@@ -94,27 +94,7 @@ function setup() {
   }
 
 
-  //-----TIMER
-  let minutes = 0;
-  let seconds = 0;
-  let decseconds = 0;
-  var timer = createP('0:00.0');
-  timer.id('timer');
-  timer.html(minutes + ":" + seconds + "." + decseconds);
 
-  function timeIt() {
-    decseconds++;
-    timer.html(minutes + ":" + seconds + "." + decseconds);
-    if (decseconds >= 9) {
-      decseconds -= 9;
-      seconds++;
-    }
-    if (seconds >= 60){
-      seconds -= 60;
-      minutes++;
-    }
-  }
-  myVar = setInterval(timeIt, 100);
 }
 
 
@@ -176,7 +156,8 @@ function fillRectangle(x, y) {
   let seconds = 0;
   let decseconds = 0;
 
-
+  var timer = select('timer');
+  timer.style('display', 'block');
 
 
 

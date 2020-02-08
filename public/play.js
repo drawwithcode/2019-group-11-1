@@ -166,12 +166,10 @@ function mouseClicked() {
   socket.emit('mouse', data);
   console.log('sending: ', mouseX, mouseY);
   fillRectangle(mouseX, mouseY);
-  myVar = setInterval(timeIt, 100);
   executed++;
 }
 
 function fillRectangle(x, y) {
-
 
   //coloring the rectangle
   fill(51, 73, 108, 120);
@@ -182,6 +180,8 @@ function fillRectangle(x, y) {
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
   imageMode(CENTER);
   image(imageArray[Math.floor(random(imageArray.length))], ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
+
+  myVar = setInterval(timeIt, 100);
 
 
   checkCompletition(ascisse, ordinate);

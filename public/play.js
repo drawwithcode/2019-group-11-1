@@ -172,7 +172,7 @@ function fillRectangle(x, y) {
       minutes++;
     }
   }
-  myVar = setInterval(timeIt, 100);
+  myVar = setInterval(timeIts, 100);
 
 
   //coloring the rectangle

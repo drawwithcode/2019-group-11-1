@@ -52,10 +52,9 @@ var clickLimit = 1;
 var myVar;
 
 //-----TIMER
-var tempo;
+var time = 0;
 var showTime = 0;
-var seconds = 0;
-var minutes = 0;
+
 
 
 function setup() {
@@ -158,18 +157,18 @@ function fillRectangle(x, y) {
 
 
  function timeIt() {
-   tempo++;
-    if (tempo >= 9) {
-      tempo -= 9;
+  /*  decseconds++;
+    if (decseconds >= 9) {
+      decseconds -= 9;
       seconds++;
     }
     if (seconds >= 60){
       seconds -= 60;
       minutes++;
-    }
+    }*/
 
-	//time ++;
-	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + tempo;
+	time ++;
+	document.getElementById("timer").innerHTML = time/600 + ":" + parseInt(time/10)%60 + "." + time%10;
   }
 
 	//first iteration

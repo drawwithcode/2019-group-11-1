@@ -51,6 +51,10 @@ var clickLimit = 1;
 
 var myVar;
 
+let minutes = 0;
+let seconds = 0;
+let decseconds = 0;
+
 function setup() {
   strokeWeight(4);
   let cnv = createCanvas(640, 640);
@@ -94,9 +98,7 @@ function setup() {
   }
 
   //-----TIMER
-  let minutes = 0;
-  let seconds = 0;
-  let decseconds = 0;
+
   var timer = createP('0:00.0');
   timer.id('timer');
   timer.html(minutes + ":" + seconds + "." + decseconds);

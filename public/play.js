@@ -171,6 +171,9 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
+  myVar = setInterval(timeIt, 100);
+
+
   //coloring the rectangle
   fill(51, 73, 108, 120);
   stroke(255)
@@ -181,7 +184,6 @@ function fillRectangle(x, y) {
   imageMode(CENTER);
   image(imageArray[Math.floor(random(imageArray.length))], ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
 
-  myVar = setInterval(timeIt, 100);
 
 
   checkCompletition(ascisse, ordinate);

@@ -166,12 +166,12 @@ function mouseClicked() {
   socket.emit('mouse', data);
   console.log('sending: ', mouseX, mouseY);
   fillRectangle(mouseX, mouseY);
+  myVar = setInterval(timeIt, 100);
   executed++;
 }
 
 function fillRectangle(x, y) {
 
-  myVar = setInterval(timeIt, 100);
 
   //coloring the rectangle
   fill(51, 73, 108, 120);

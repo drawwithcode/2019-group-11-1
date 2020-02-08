@@ -222,7 +222,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
   //console log with time
-//  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
 }
 
 

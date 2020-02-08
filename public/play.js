@@ -52,7 +52,7 @@ var clickLimit = 1;
 var myVar;
 
 //-----TIMER
-var time;
+var time = 0;
 var showTime = 0;
 
 

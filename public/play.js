@@ -34,7 +34,6 @@ function preload() {
   imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
 
   yay = loadImage("./assets/YAY.png");
-  yellow = loadImage("./assets/yellow.png")
 }
 
 var socket;

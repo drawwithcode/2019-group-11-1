@@ -37,7 +37,7 @@ var ySize;
 
 var clickLimit = 1;
 
-var myVar = setInterval(timeIt, 100);
+var myVar;
 
 //-----preloading the assets
 function preload() {
@@ -50,6 +50,8 @@ function preload() {
   yay = loadImage("./assets/YAY.png");
   yellow = loadImage("./assets/yellow.png")
 }
+
+
 
 function setup() {
   strokeWeight(4);
@@ -172,9 +174,8 @@ function fillRectangle(x, y) {
       seconds -= 60;
       minutes++;
     }
-    myVar = setInterval(timeIt, 100);
   }
-
+  myVar = setInterval(timeIt, 100);
 
 
 

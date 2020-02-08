@@ -178,8 +178,7 @@ function fillRectangle(x, y) {
   let decseconds = 0;
 
 
-  document.getElementById("timer").style.display = "inline";
-  document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
+
 
 
 
@@ -195,6 +194,8 @@ function fillRectangle(x, y) {
     }
   }
   myVar = setInterval(timeIt, 100);
+  document.getElementById("timer").style.display = "inline";
+  document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
 
 
   //coloring the rectangle

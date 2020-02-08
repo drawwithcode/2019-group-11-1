@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no>
+  <title>💙2NT - instructions</title>
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      background: radial-gradient(#8bd7e8, #8bd7e8, #8bd7e8, #8bd7e8, #ffffff);
+      background-size: 100px 100px;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-family: "VT323";
+      font-size: 80px;
+      text-align: center;
+      color: #1d3651;
+    }
+
+    #iconleft1 {
+      /*per centrare le immagini*/
+      display: block;
+      width: 20%;
+      height: 20%;
+      margin-left: 120px;
+      padding-left: 0 50px;
+      float: left;
+    }
+
+    #iconleft2 {
+      /*per centrare le immagini*/
+      display: block;
+      width: 25%;
+      height: 25%;
+      margin-left: 100px;
+      padding-left: 0 50px;
+      float: left;
+    }
+
+    #textleft {
+      font-size: 60px;
+      padding-top: 50px;
+      padding-right: 60px;
+      text-align: center;
+    }
+
+    #iconright {
+      /*per centrare le immagini*/
+      display: block;
+      width: 20%;
+      height: 20%;
+      margin-right: 120px;
+      padding-right: 0 50px;
+      float: right;
+    }
+
+    #textright {
+      font-size: 60px;
+      padding-top: 50px;
+      padding-left: 60px;
+      text-align: center;
+    }
+
+    div {
+      margin-bottom: 200px;
+    }
+
+    p {
+      color: #415b7e;
+      font-family: "VT323";
+      font-size: 40px;
+      margin-top: 10px;
+    }
+
+    #gototheroom {
+      margin-top: -90px;
+      font-size: 50px;
+      text-align: center;
+      color: #1d3651;
+      font-family: "VT323";
+      border: 10px solid #1d3651;
+      margin-right: 250px;
+      margin-left: 250px;
+      padding: 16px;
+    }
+  </style>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="p5.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <script src="instructions.js"></script>
+</head>
+
+<div>
+  <h1>how to play</h1>
+</div>
+
+<div>
+  <img id="iconleft1" src="./assets/grid.png">
+  <p id="textleft">< enter the room</p> </div>
+
+  <div>
+      <img id="iconright" src="./assets/click.png">
+      <p id="textright">click one square ></p>
+</div>
+
+<div>
+  <img id="iconleft2" src="./assets/your_time.png">
+  <p id="textleft"> < break the record!</p>
+</div>
+
+<body>
+
+
+</body>
+
+</html>

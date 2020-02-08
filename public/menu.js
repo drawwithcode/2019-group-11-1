@@ -35,7 +35,7 @@ function clickButtonAbout() {
 
 //-------FUNCTION TO OPEN THE PLAY PAGE
 function clickButtonPlay() {
-  var myUrl = "play.html"
+  var myUrl = "instructions.html"
   window.open(myUrl, "_self");
 }
 

@@ -208,7 +208,19 @@ function checkCompletition(x, y) {
   }
 
   //filter(BLUR, 10);
-  myVar = setInterval(timeIt, 100);
+  function timeIt() {
+    decseconds++;
+    timer.html(minutes + ":" + seconds + "." + decseconds);
+    if (decseconds >= 9) {
+      decseconds -= 9;
+      seconds++;
+    }
+    if (seconds >= 60){
+      seconds -= 60;
+      minutes++;
+    }
+  }
+  myVar = setInterval(timeIt, 100)
   clearInterval(myVar);
   imageMode(CENTER);
   fill(51, 73, 108, 120);

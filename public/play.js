@@ -150,6 +150,30 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
+  //-----TIMER
+  let minutes = 0;
+  let seconds = 0;
+  let decseconds = 0;
+  var timer = createP('0:00.0');
+  timer.id('timer');
+  timer.html(minutes + ":" + seconds + "." + decseconds);
+
+
+  function timeIt() {
+    decseconds++;
+    timer.html(minutes + ":" + seconds + "." + decseconds);
+    if (decseconds >= 9) {
+      decseconds -= 9;
+      seconds++;
+    }
+    if (seconds >= 60){
+      seconds -= 60;
+      minutes++;
+    }
+  }
+  myVar = setInterval(timeIt, 100);
+
+
   //coloring the rectangle
   fill(51, 73, 108, 120);
   stroke(255)
@@ -163,64 +187,35 @@ function fillRectangle(x, y) {
 
   checkCompletition(ascisse, ordinate);
 
-
-  //-------controllo che tutti i valori siano a 1
-  function checkCompletition(x, y) {
-
-    //-----TIMER
-    let minutes = 0;
-    let seconds = 0;
-    let decseconds = 0;
-    var timer = createP('0:00.0');
-    timer.id('timer');
-    timer.html(minutes + ":" + seconds + "." + decseconds);
-
-
-    function timeIt() {
-      decseconds++;
-      timer.html(minutes + ":" + seconds + "." + decseconds);
-      if (decseconds >= 9) {
-        decseconds -= 9;
-        seconds++;
-      }
-      if (seconds >= 60) {
-        seconds -= 60;
-        minutes++;
-      }
-    }
-    myVar = setInterval(timeIt, 100);
-
-
-
-    grid[x][y] = 1;
-
-    for (var i = 0; i < grid.length; i++) {
-      for (var y = 0; y < grid[i].length; y++) {
-        if (grid[i][y] == 0) {
-          return;
-        }
-      }
-    }
-
-    //filter(BLUR, 10);
-    clearInterval(myVar);
-    imageMode(CENTER);
-    fill(51, 73, 108, 120);
-    rect(0, 0, 640, 640);
-    image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
-    //alert("YAY!");
-
-    //refresh!
-    //location.reload();
-
-    //console log with time
-    console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
-  }
-
-
 }
 
+//-------controllo che tutti i valori siano a 1
+function checkCompletition(x, y) {
 
+  grid[x][y] = 1;
+
+  for (var i = 0; i < grid.length; i++) {
+    for (var y = 0; y < grid[i].length; y++) {
+      if (grid[i][y] == 0) {
+        return;
+      }
+    }
+  }
+
+  //filter(BLUR, 10);
+  clearInterval(myVar);
+  imageMode(CENTER);
+  fill(51, 73, 108, 120);
+  rect(0, 0,  640, 640);
+  image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
+  //alert("YAY!");
+
+  //refresh!
+  //location.reload();
+
+  //console log with time
+  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+}
 
 
 

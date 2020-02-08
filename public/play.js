@@ -93,9 +93,6 @@ function setup() {
     }
   }
 
-  var timer = select('timer');
-  timer.style('display', 'block');
-
 }
 
 

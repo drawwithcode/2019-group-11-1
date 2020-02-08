@@ -24,7 +24,6 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 
 var yay;
 var imageArray = [];
-var functionTimeIt;
 
 //-----preloading the assets
 function preload() {
@@ -95,26 +94,7 @@ function setup() {
   }
 
 
-  //-----TIMER
-  let minutes = 0;
-  let seconds = 0;
-  let decseconds = 0;
-  var timer = createP('0:00.0');
-  timer.id('timer');
-  timer.html(minutes + ":" + seconds + "." + decseconds);
 
-  functionTimeit = function timeIt() {
-    decseconds++;
-    timer.html(minutes + ":" + seconds + "." + decseconds);
-    if (decseconds >= 9) {
-      decseconds -= 9;
-      seconds++;
-    }
-    if (seconds >= 60){
-      seconds -= 60;
-      minutes++;
-    }
-  }
 }
 
 
@@ -172,8 +152,30 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
+
+  //-----TIMER
+  let minutes = 0;
+  let seconds = 0;
+  let decseconds = 0;
+  var timer = createP('0:00.0');
+  timer.id('timer');
+  timer.html(minutes + ":" + seconds + "." + decseconds);
+
+  function timeIt() {
+    decseconds++;
+    timer.html(minutes + ":" + seconds + "." + decseconds);
+    if (decseconds >= 9) {
+      decseconds -= 9;
+      seconds++;
+    }
+    if (seconds >= 60){
+      seconds -= 60;
+      minutes++;
+    }
+  }
   myVar = setInterval(timeIt, 100);
 
+  
 
   //coloring the rectangle
   fill(51, 73, 108, 120);
@@ -184,7 +186,6 @@ function fillRectangle(x, y) {
   rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
   imageMode(CENTER);
   image(imageArray[Math.floor(random(imageArray.length))], ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
-
 
 
   checkCompletition(ascisse, ordinate);

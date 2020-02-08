@@ -37,7 +37,7 @@ var ySize;
 
 var clickLimit = 1;
 
-var myVar = setInterval(timeIt, 100);;
+var myVar = setInterval(timeIt, 100);
 
 //-----preloading the assets
 function preload() {

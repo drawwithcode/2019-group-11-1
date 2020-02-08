@@ -155,8 +155,6 @@ function fillRectangle(x, y) {
   let decseconds = 0;
   var timer = createP('0:00.0');
   timer.id('timer');
-  timer.html(minutes + ":" + seconds + "." + decseconds);
-
 
   function timeIt() {
     decseconds++;

@@ -1,4 +1,4 @@
-/-------PLAY
+//-------PLAY
 
 var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
   'pikachu', 'charmander', 'squirtle', 'bulbasaur', 'kirby',

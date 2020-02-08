@@ -52,9 +52,9 @@ var clickLimit = 1;
 var myVar;
 
 //-----TIMER
-let minutes = 0;
-let seconds = 0;
-let decseconds = 0;
+var time;
+var showTime = 0;
+
 
 
 function setup() {
@@ -155,8 +155,9 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
-  function timeIt() {
-    decseconds++;
+
+ function timeIt() {
+  /*  decseconds++;
     if (decseconds >= 9) {
       decseconds -= 9;
       seconds++;
@@ -164,11 +165,20 @@ function fillRectangle(x, y) {
     if (seconds >= 60){
       seconds -= 60;
       minutes++;
-    }
+    }*/
+
+	time ++;
+	document.getElementById("timer").innerHTML = time/600 + ":" + parseInt(time/10)%60 + "." + time%10;
   }
-  myVar = setInterval(timeIt, 100);
-  document.getElementById("timer").style.display = "inline";
-  document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
+
+	//first iteration
+	if(showTime == 0){
+		showTime = 1;
+		myVar = setInterval(timeIt, 100);
+		document.getElementById("timer").style.display = "inline";
+	}
+
+
 
 
   //coloring the rectangle
@@ -211,7 +221,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
   //console log with time
-  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+//  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
 }
 
 

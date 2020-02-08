@@ -112,10 +112,10 @@ function handleCounter(data) {
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
   //prova per verificare il numero di persone!! funziona solo con >=
-  if (data.count == 16) {
-    imageMode(CENTER)
-    image(yellow, width / 2, height / 2, yellow.width / 5, yellow.height / 5);
-  }
+  // if (data.count == 16) {
+  //   imageMode(CENTER)
+  //   image(yellow, width / 2, height / 2, yellow.width / 5, yellow.height / 5);
+  // }
 
 }
 

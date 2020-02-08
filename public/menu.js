@@ -2,7 +2,7 @@
 
 //variables
 var aboutTheGame;
-var playTheGame;
+var openInstructions;
 var leaderboard;
 var linkToSite;
 
@@ -14,8 +14,8 @@ function setup() {
   aboutTheGame.touchStarted(clickButtonAbout);
 
   //-------PLAY BUTTON
-  playTheGame = createP('--{ play }--');
-  playTheGame.touchStarted(clickButtonPlay);
+  openInstructions = createP('--{ play }--');
+  openInstructions.touchStarted(clickButtonInstructions);
 
   //-------LEADERBOARD BUTTON
   leaderboard = createP('--{ leaderboard }--');
@@ -34,7 +34,7 @@ function clickButtonAbout() {
 }
 
 //-------FUNCTION TO OPEN THE PLAY PAGE
-function clickButtonPlay() {
+function clickButtonInstructions() {
   var myUrl = "instructions.html"
   window.open(myUrl, "_self");
 }

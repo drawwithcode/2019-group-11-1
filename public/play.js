@@ -25,18 +25,6 @@ var roomColors = ['red', 'yellow', 'orange', 'blue', 'light blue',
 var yay;
 var imageArray = [];
 
-//-----preloading the assets
-function preload() {
-  //imageArray
-  imageArray[0] = loadImage("./assets/rupia.png"); // rupia
-  imageArray[1] = loadImage("./assets/triforce.png"); // triforce
-  imageArray[2] = loadImage("./assets/twinkle.png"); // star
-  imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
-
-  yay = loadImage("./assets/YAY.png");
-  yellow = loadImage("./assets/yellow.png")
-}
-
 var socket;
 
 var righe = 4;
@@ -50,6 +38,18 @@ var ySize;
 var clickLimit = 1;
 
 var myVar;
+
+//-----preloading the assets
+function preload() {
+  //imageArray
+  imageArray[0] = loadImage("./assets/rupia.png"); // rupia
+  imageArray[1] = loadImage("./assets/triforce.png"); // triforce
+  imageArray[2] = loadImage("./assets/twinkle.png"); // star
+  imageArray[3] = loadImage("./assets/pokeball.png"); //pokeball
+
+  yay = loadImage("./assets/YAY.png");
+  yellow = loadImage("./assets/yellow.png")
+}
 
 function setup() {
   strokeWeight(4);
@@ -175,7 +175,7 @@ function fillRectangle(x, y) {
   }
   myVar = setInterval(timeIt, 100);
 
-  
+
 
   //coloring the rectangle
   fill(51, 73, 108, 120);

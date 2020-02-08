@@ -93,7 +93,8 @@ function setup() {
     }
   }
 
-
+  var timer = select('timer');
+  timer.style('display', 'block');
 
 }
 
@@ -155,9 +156,6 @@ function fillRectangle(x, y) {
   let minutes = 0;
   let seconds = 0;
   let decseconds = 0;
-
-  var timer = select('timer');
-  timer.style('display', 'block');
 
 
 

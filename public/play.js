@@ -50,7 +50,6 @@ var ySize;
 var clickLimit = 1;
 
 var myVar;
-var timeIts;
 
 function setup() {
   strokeWeight(4);
@@ -160,7 +159,7 @@ function fillRectangle(x, y) {
   timer.html(minutes + ":" + seconds + "." + decseconds);
 
 
-  timeIts = function timeIt() {
+  function timeIt() {
     decseconds++;
     timer.html(minutes + ":" + seconds + "." + decseconds);
     if (decseconds >= 9) {
@@ -172,7 +171,7 @@ function fillRectangle(x, y) {
       minutes++;
     }
   }
-  myVar = setInterval(timeIts, 100);
+  myVar = setInterval(timeIt, 100);
 
 
   //coloring the rectangle
@@ -188,35 +187,39 @@ function fillRectangle(x, y) {
 
   checkCompletition(ascisse, ordinate);
 
-}
 
-//-------controllo che tutti i valori siano a 1
-function checkCompletition(x, y) {
+  //-------controllo che tutti i valori siano a 1
+  function checkCompletition(x, y) {
 
-  grid[x][y] = 1;
+    grid[x][y] = 1;
 
-  for (var i = 0; i < grid.length; i++) {
-    for (var y = 0; y < grid[i].length; y++) {
-      if (grid[i][y] == 0) {
-        return;
+    for (var i = 0; i < grid.length; i++) {
+      for (var y = 0; y < grid[i].length; y++) {
+        if (grid[i][y] == 0) {
+          return;
+        }
       }
     }
+
+    //filter(BLUR, 10);
+    clearInterval(myVar);
+    imageMode(CENTER);
+    fill(51, 73, 108, 120);
+    rect(0, 0,  640, 640);
+    image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
+    //alert("YAY!");
+
+    //refresh!
+    //location.reload();
+
+    //console log with time
+    console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
   }
 
-  //filter(BLUR, 10);
-  clearInterval(myVar);
-  imageMode(CENTER);
-  fill(51, 73, 108, 120);
-  rect(0, 0,  640, 640);
-  image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
-  //alert("YAY!");
 
-  //refresh!
-  //location.reload();
-
-  //console log with time
-  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
 }
+
+
 
 
 

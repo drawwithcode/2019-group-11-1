@@ -208,6 +208,7 @@ function checkCompletition(x, y) {
   }
 
   //filter(BLUR, 10);
+  myVar = setInterval(timeIt, 100);
   clearInterval(myVar);
   imageMode(CENTER);
   fill(51, 73, 108, 120);

@@ -150,30 +150,6 @@ function mouseClicked() {
 
 function fillRectangle(x, y) {
 
-  //-----TIMER
-  let minutes = 0;
-  let seconds = 0;
-  let decseconds = 0;
-  var timer = createP('0:00.0');
-  timer.id('timer');
-  timer.html(minutes + ":" + seconds + "." + decseconds);
-
-
-  function timeIt() {
-    decseconds++;
-    timer.html(minutes + ":" + seconds + "." + decseconds);
-    if (decseconds >= 9) {
-      decseconds -= 9;
-      seconds++;
-    }
-    if (seconds >= 60){
-      seconds -= 60;
-      minutes++;
-    }
-  }
-  myVar = setInterval(timeIt, 100);
-
-
   //coloring the rectangle
   fill(51, 73, 108, 120);
   stroke(255)
@@ -191,6 +167,31 @@ function fillRectangle(x, y) {
   //-------controllo che tutti i valori siano a 1
   function checkCompletition(x, y) {
 
+    //-----TIMER
+    let minutes = 0;
+    let seconds = 0;
+    let decseconds = 0;
+    var timer = createP('0:00.0');
+    timer.id('timer');
+    timer.html(minutes + ":" + seconds + "." + decseconds);
+
+
+    function timeIt() {
+      decseconds++;
+      timer.html(minutes + ":" + seconds + "." + decseconds);
+      if (decseconds >= 9) {
+        decseconds -= 9;
+        seconds++;
+      }
+      if (seconds >= 60) {
+        seconds -= 60;
+        minutes++;
+      }
+    }
+    myVar = setInterval(timeIt, 100);
+
+
+
     grid[x][y] = 1;
 
     for (var i = 0; i < grid.length; i++) {
@@ -205,7 +206,7 @@ function fillRectangle(x, y) {
     clearInterval(myVar);
     imageMode(CENTER);
     fill(51, 73, 108, 120);
-    rect(0, 0,  640, 640);
+    rect(0, 0, 640, 640);
     image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
     //alert("YAY!");
 

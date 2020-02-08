@@ -51,6 +51,12 @@ var clickLimit = 1;
 
 var myVar;
 
+//-----TIMER
+let minutes = 0;
+let seconds = 0;
+let decseconds = 0;
+
+
 function setup() {
   strokeWeight(4);
   let cnv = createCanvas(640, 640);
@@ -148,13 +154,6 @@ function mouseClicked() {
 }
 
 function fillRectangle(x, y) {
-
-  //-----TIMER
-  let minutes = 0;
-  let seconds = 0;
-  let decseconds = 0;
-
-
 
   function timeIt() {
     decseconds++;

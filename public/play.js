@@ -176,7 +176,7 @@ function fillRectangle(x, y) {
 	if(showTime == 0){
 		showTime = 1;
 		myVar = setInterval(timeIt, 100);
-		document.getElementById("timer").style.display = "inline";
+		document.getElementById("timer").style.display = "block";
 	}
 
 

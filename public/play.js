@@ -121,7 +121,7 @@ function handleCounter(data) {
   //prova per verificare il numero di persone!!
   if (data.count == 16) {
     //console log prova!
-    console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+    //console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
   }
 
 }
@@ -223,7 +223,7 @@ function checkCompletition(x, y) {
   //location.reload();
 
   //console log with time
-  //console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+  console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
 }
 
 

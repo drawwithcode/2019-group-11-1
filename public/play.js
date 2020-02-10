@@ -62,7 +62,7 @@ function setup() {
   strokeWeight(4);
   let cnv = createCanvas(640, 640);
   cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 320);
-  //background(moon)
+
 
   //-------Create a new connection using socket.io (imported in index.html)
   socket = io();
@@ -82,7 +82,7 @@ function setup() {
   noFill();
 
 
-  //-------griglia di appoggio per il controllo finale
+  //-------grid used to make squares appear according to their position
   for (var i = 0; i < grid.length; i++) {
     grid[i] = new Array(colonne);
     for (var k = 0; k < grid.length; k++) {
@@ -90,10 +90,9 @@ function setup() {
     }
   }
 
-  //-------griglia di quadrati
+  //-------square grid
   for (var i = 0; i < righe; i++) {
     for (var y = 0; y < colonne; y++) {
-      //ellipse(data.x, data.y, 20);
 
       rect(i * xSize, y * ySize, xSize, ySize);
 
@@ -113,7 +112,7 @@ function newDrawing(data) {
 
 }
 
-//Conteggio persone!
+//-------count connections number
 function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
@@ -134,9 +133,9 @@ function mouseClicked() {
     y: mouseY
   }
 
-  //-------ONLY ONE CLICK
+  //-------only one click
   if (executed >= clickLimit) {
-    //alert("don't you dare!");
+    //alert("Only one!");
     return;
   }
 
@@ -144,7 +143,7 @@ function mouseClicked() {
   var ordinate = parseInt(mouseY / ySize);
 
   if (grid[ascisse][ordinate] == 1) {
-    //alert("Qui hai già cliccato");
+    //alert("Already Clicked!");
     return;
   }
 
@@ -180,9 +179,6 @@ function fillRectangle(x, y) {
 		document.getElementById("timer").style.display = "block";
 	}
 
-
-
-
   //coloring the rectangle
   fill(51, 73, 108, 120);
   stroke(255)
@@ -198,7 +194,7 @@ function fillRectangle(x, y) {
 
 }
 
-//-------controllo che tutti i valori siano a 1
+//-------check that all values are marked "1"
 function checkCompletition(x, y) {
 
   grid[x][y] = 1;
@@ -211,18 +207,18 @@ function checkCompletition(x, y) {
     }
   }
 
-  //filter(BLUR, 10);
   clearInterval(myVar);
   imageMode(CENTER);
   fill(51, 73, 108, 120);
   rect(0, 0,  640, 640);
-  image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
   //alert("YAY!");
+  image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
+
 
   //refresh!
   //location.reload();
 
-  //console log with time
+  //console log with time + random room
   console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
 }
 

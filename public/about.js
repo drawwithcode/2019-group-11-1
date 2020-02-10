@@ -2,7 +2,6 @@
 
 //-------variables
 var buttonBACK;
-var buttonBACKh1;
 
 //-------preloading the assets
 function preload() {

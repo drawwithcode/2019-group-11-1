@@ -8,11 +8,6 @@ function setup() {
 
 }
 
-//-------fixed screen when you touch it
-function touchMoved() {
-  return false;
-}
-
 //-------function to resize the window
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

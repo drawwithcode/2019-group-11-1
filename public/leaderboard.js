@@ -5,9 +5,6 @@ function setup() {
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
 
-  background(139, 215, 232);
-  ellipseMode(CENTER);
-  ellipse( width/2, height/2, 100, 100);
 
 }
 

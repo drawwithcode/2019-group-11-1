@@ -8,22 +8,85 @@
   <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
-      padding: 0;
-      margin: 0;
+      background: radial-gradient(#8bd7e8, #8bd7e8, #8bd7e8, #8bd7e8, #ffffff);
+      background-size: 100px 100px;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      margin-left: 40px;
+      margin-top: 100px;
+      font-family: "VT323";
+      font-size: 80px;
+      text-align: center;
+      color: #1d3651;
     }
 
     p {
       margin-top: 10px;
       color: #415b7e;
       font-family: "VT323";
-      font-size: 80px;
+      font-size: 40px;
       text-align: center;
+    }
+
+    div {
+      margin: 60px;
+
+    }
+
+    .records {
+      font-size: 60px;
+      border: 10px solid #415b7e;
+      margin-right: 60px;
+      margin-left: 60px;
+      padding: 16px;
+    }
+
+    #record1 {
+      font-size: 90px;
+      color: orange;
+    }
+
+    #leaderboardtext {
+      margin-bottom: 160px;
     }
   </style>
   <script src="p5.min.js"></script>
   <script src="p5.sound.min.js"></script>
   <script src="leaderboard.js"></script>
 </head>
+<div>
+  <h1>leaderboard</h1>
+  <p id="leaderboardtext">best records will be here when we will make it work :( </p>
+
+  <p class="records" id="record1">1st<br><u>crimson mega man</u><br>00:08.4 </p>
+  <p class="records" style="color: grey">2nd<br><u>blue pikachu</u><br> 00:10.6 </p>
+  <p class="records" style="color: brown">3rd<br><u>red z-shaped tetris block</u> <br>00:11.7</p>
+  <p class="records">4th<br><u>orange dovahkiin</u><br>00:11.9</p>
+  <p class="records">5th<br><u>green mario</u><br>00:12.1</p>
+  <p class="records">6th<br><u>purple yoshi</u> <br>00:12.6</p>
+  <p class="records">7th<br><u>aquamarine rayman</u> <br>00:13.9</p>
+  <p class="records">8th<br><u>lilac samus</u><br>00:14.0</p>
+  <p class="records">9th<br><u>grey kratos</u> <br>00:14.3</p>
+  <p class="records">10th<br><u>gold vault boy</u><br>00:15.2</p>
+
+
+</div>
 
 <body>
 </body>

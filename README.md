@@ -1,9 +1,10 @@
 ![header](readme/head.png)
 ## About
-2NT is an interactive game app, inspired by Games Done Quick, that revolves around speed and collaboration between different users.
+2NT is an interactive game app, inspired by Games Done Quick, that revolves around speed and collaboration between different users. 
+It is built using the language p5.js and was developed for the final exam of the course Creative Coding at Politecnico di Milano. 
 
 #### Table of contents
-1. [Concept](#concept)
+1. [Contest](#contest)
 2. [Storyboard and Interactions](#storyboard-and-interactions) <br>
 * [About page](#about-page)<br>
 * [Play](#play)<br>

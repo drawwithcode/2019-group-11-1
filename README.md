@@ -128,3 +128,10 @@ unction mouseClicked() {
   }
 ```
 
+## Team
+*2NT* was developed by:
++ Lorenzo Di Grazia
++ Elisabetta D'Orto
++ Isabella Possaghi
++ Erica Tronconi
+

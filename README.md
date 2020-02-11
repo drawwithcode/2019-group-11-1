@@ -5,17 +5,21 @@ It is built using the language p5.js and was developed for the final exam of the
 
 #### Table of contents
 1. [Contest](#contest)
-2. [Storyboard and Interactions](#storyboard-and-interactions) <br>
-* [About page](#about-page)<br>
-* [Play](#play)<br>
-* [Leaderboard](#leaderboard)<br>
-3. [Key Features](#key-features)
+2. [Structure of the game](#structure-of-the-game) <br>
+a. [About page](#about-page)<br>
+b. [Play](#play)<br>
+c. [Leaderboard](#leaderboard)<br>
+3. [Code architecture](#code-architecture)
 4. [Team](#team)
 
-## Concept
-![gdq](readme/event.jpg)
-Games Done Quick is a series of charity video games marathons held twice a year. It features high level gamplay from speedrunners and has an attendance of average 2000 people. 2NT is inspired by and created for these events, the idea is to make the public run its own marathon during the breaks from the gameplays.
-The concept of 2NT is easy, each user has to enter a room, the game will start when the room has reached the nember of 16 players in it. Then a stopwatch will start and each person just needs to touch one of the squares, once the grid is all complete the time will stop and the score will enter the leaderboard. 
+## Contest
+![gdq](readme/gdq.png)
+2nt was designed for the event “Games Done Quick”. What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people. 
+The goal of this event is to play an entire game or only a part of it with the intention of completing it as fast as possible. 
+For this occasion, 2nt was born: a game with the aim of achieving its goal by reaching a new record each time. 
+The game is very simple and intuitive: in fact, the user has to click only a square as fast as he can to complete the mission. For this reason, 2nt has been designed to be played during the event Games Done Quick: so that between one game session and the other, players can entertain themselves with this fun mini speedrun.
+Briefly: each user has to enter a room the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will enter the leader board.
+
 
 ![gif](readme/gdq.gif)
 

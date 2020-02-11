@@ -130,7 +130,7 @@ function handleCounter(data) {
     ```
   The interaction is limited to one tap for every single user in order to make the game collaborative.
   In this way the grid could not be completed by one user only, but each person needs the help of others to win.
-  (Conditional written in mouseClicked(){} function)
+  (Conditional written in mouseClicked(){} function).
 
   ```
     //-------only one click
@@ -141,7 +141,7 @@ function handleCounter(data) {
   ```
   To avoid click repetition on the same square, a limitation has been inserted.
   In this way the user could only makes a single square appear, without an interaction with squares that have been already generated.
-  (Conditional written in mouseClicked(){} function)
+  (Conditional written in mouseClicked(){} function).
 
   ```
   if (grid[axis][ordinates] == 1) {
@@ -150,9 +150,10 @@ function handleCounter(data) {
   }
   ```
 ##### Square creation
-  Through the interaction appears a darker square with an icon at the center, randomly picked from the images' array.
-  The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
-  The filling of the entire grid is stated by a function called checkCompletition(){}, directly linked with the grid's coordinates.
+      Through the interaction appears a darker square with an icon at the center, randomly picked from the images' array.
+      The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
+      The filling of the entire grid is stated by a function called checkCompletition(){}, directly linked with the grid's coordinates.
+
   ```
   //-------fill a square according to emitted data
   function fillRectangle(x, y) {
@@ -174,8 +175,8 @@ function handleCounter(data) {
   }
     ```
 ##### Starting the timer
-        The timer starts when the first person taps the canvas, in this way the game has begun!.
-        The #timer paragraph is created in the index.
+      The timer starts when the first person taps the canvas, in this way the game has begun!.
+      The #timer paragraph is created in the index.
         ```
         #timer {
               text-align: center;
@@ -189,8 +190,8 @@ function handleCounter(data) {
 
             }
         ```
-        The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.
-        (Function contained in fillRectangle(){} function)
+      The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.
+      (Function contained in fillRectangle(){} function)
           ```
           function timeIt() {
            decseconds++;
@@ -217,13 +218,13 @@ function handleCounter(data) {
         		document.getElementById("timer").style.display = "block";
         	}
           ```
-##### Check Completition
+##### Check Completion
 
-          The grid that was previously used to check marks = 0 is the same constructed in this function to check that every values are marked "1". If every value results "1", then the grid is completed and a " YAY!" message will appear.
-          The timer stops and shows how long did it take to fill all the squares.
-          We used clearInterval to reset the timer created with setInterval().
+      The grid that was previously used to check marks = 0 is the same constructed in this function to check that every values are marked "1". If every value results "1", then the grid is completed and a " YAY!" message will appear.
+      The timer stops and shows how long did it take to fill all the squares.
+      We used clearInterval to reset the timer created with setInterval().
 
-          A random combination of elements picked from the two arrays(var roomNames + var roomColors) generates a room nickname associated with game time.
+      A random combination of elements picked from the two arrays(var roomNames + var roomColors) generates a room nickname associated with game time. (Only visible in console.log, for now...).
 
           ```
           //-------check that all values are marked "1"
@@ -247,6 +248,15 @@ function handleCounter(data) {
             image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
             //-------console log with time + random room
             console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+          }
+          ```
+
+##### Check Completion
+      Avoid the screen sliding and page refresh in some devices.
+          ```
+          //-------fixed screen when you touch it
+          function touchMoved() {
+            return false;
           }
           ```
 

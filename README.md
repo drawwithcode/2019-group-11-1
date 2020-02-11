@@ -1,7 +1,7 @@
 ![header](readme/head.png)
 ## About
-2NT is an interactive game app, inspired by Games Done Quick, that revolves around speed and collaboration between different users. 
-It is built using p5.js, HTML and CSS languages and it was developed for the final exam of the course Creative Coding at Politecnico di Milano. 
+2NT is an interactive game app, inspired by Games Done Quick, that revolves around speed and collaboration between different users.
+It is built using p5.js, HTML and CSS languages and it was developed for the final exam of the course Creative Coding at Politecnico di Milano.
 
 #### Table of contents
 1. [Contest](#1.-contest)
@@ -18,7 +18,7 @@ c. [Leaderboard](#leaderboard)<br>
 ![gdq](readme/gdq.png)
 2NT was designed for the event “Games Done Quick”.<br>
 <br>
-What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people. 
+What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people.
 The goal of this event is to play an entire game or only a part of it with the intention of completing it as fast as possible.<br>
 <br>
 For this occasion, 2NT was born: a game that reflects the main feature of GDQ events - completing the game as fast as possible!.<br>
@@ -27,23 +27,23 @@ The game is very simple and intuitive - the user has to click only a square as f
 <br>
 Briefly: each user has to enter a room and the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will be registered in the leaderboard.<br>
 <br>
-2NT was designed primarily for users who participate in GDQ events, but it can be used by anyone and even by less experienced players as it is very simple to play with. 
+2NT was designed primarily for users who participate in GDQ events, but it can be used by anyone and even by less experienced players as it is very simple to play with.
 
 
 ![gif](readme/gdq_gif.gif)
 
 ## Structure of the game
-The app is divided in three main parts: "about", "play" and "leaderboard". There is also a link directing to GDQ website. 
+The app is divided in three main parts: "about", "play" and "leaderboard". There is also a link directing to GDQ website.
 ![gdq](readme/indice.PNG)
 
 #### About page
-In the "about" section the game is presented to the players in such a way that they have an idea what it is about. 
+In the "about" section the game is presented to the players in such a way that they have an idea what it is about.
 ![gdq](readme/about.PNG)
 
 #### Play
 Here the user can play the game itself, the first page is an introduction to the game taht shows the instructions of how it works.
 ![gdq](readme/howitworks.PNG)
-Clicking a button the player can enter the room he will be playing in and he has to wait for the other players to join. 
+Clicking a button the player can enter the room he will be playing in and he has to wait for the other players to join.
 When the number of players is reached, the first tap on one of the squares gets the time started and then all the players just have to tap to complete the game. For each players it's possible just to tap once.
 ![gdq](readme/play.PNG)
 ![gdq](readme/playgif.gif) <br>
@@ -64,9 +64,9 @@ The names of the rooms are generated using two arrays containing a long list of 
 ## Visual ID
 We wanted to make the graphics of our game similar to that of most of the videogames featured in GDQ runs so we chose to work with an 8-bit aesthetic.<br>
 <br>
-For this reason we thought of iconic pixelated graphic elements designed or customized by ourselves.<br> 
+For this reason we thought of iconic pixelated graphic elements designed or customized by ourselves.<br>
 <br>
-For choosing the color palette we opted for a blue scale to resemble the aesthetic of the original logo of the event.<br> 
+For choosing the color palette we opted for a blue scale to resemble the aesthetic of the original logo of the event.<br>
 <br>
 The fonts we chose, VT323 and Fipps, are essential for entering the vintage and nichey mood of the game.
 ![gdq](readme/palette.PNG)
@@ -104,73 +104,118 @@ function handleCounter(data) {
   }
   }
   ```
-  
-##### Starting the timer
-The timer starts when the room is full and the first person taps on one of the squares.
-The paragraph is created in the index.
-```
-#timer {
-      text-align: center;
-      font-size: 180px;
-      margin-bottom: 5px;
-      margin-top: 30px;
-      margin-right: auto;
-      margin-left: auto;
-      font-family: "VT323";
-      color: #415b7e;
+##### Interact with the canvas
+  The action taken by each user is described in the mouseClicked{} function.
+  The data emitted by users are the "tap" positions on the canvas.
+  When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented.
+  We used the parseInt() to obtain a positive integer.
 
-    }
-```
-The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. 
   ```
-  function timeIt() {
-   decseconds++;
-    if (decseconds >= 9) {
-      decseconds -= 9;
-      seconds++;
-    }
-    if (seconds >= 60){
-      seconds -= 60;
-      minutes++;
+  function mouseClicked() {
+    //-------create an object containing the mouse position
+    var data = {
+      x: mouseX,
+      y: mouseY
     }
 
-	//time ++;
-	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
+    var axis = parseInt(mouseX / xSize);
+    var ordinates = parseInt(mouseY / ySize);
+
+    socket.emit('mouse', data);
+    console.log('sending: ', mouseX, mouseY);
+    fillRectangle(mouseX, mouseY);
+    executed++;
   }
+    ```
+  The interaction is limited to one tap for every single user in order to make the game collaborative.
+  In this way the grid could not be completed by one user only, but each person needs the help of others to win.
+  (Conditional written in mouseClicked(){} function)
 
-	//first iteration
-	if(showTime == 0){
-		showTime = 1;
-		myVar = setInterval(timeIt, 100);
-		document.getElementById("timer").style.display = "block";
-	}
   ```
-##### Tapping just one square per user
-One interesting feature is the limit on the number of sqaures that one user can tap.
-In order to make the game collaborative, we set the limit of just one click per person, with this the game can not be completed by one user only but each person needs the help of others to win.
-```
-unction mouseClicked() {
-  //-------create an object containing the mouse position
-  var data = {
-    x: mouseX,
-    y: mouseY
-  }
+    //-------only one click
+    if (executed >= clickLimit) {
+      //alert("Only one!");
+      return;
+    }
+  ```
+  To avoid click repetition on the same square, a limitation has been inserted.
+  In this way the user could only makes a single square appear, without an interaction with squares that have been already generated.
+  (Conditional written in mouseClicked(){} function)
 
-  //-------only one click
-  if (executed >= clickLimit) {
-    //alert("Only one!");
-    return;
-  }
-
-  var ascisse = parseInt(mouseX / xSize);
-  var ordinate = parseInt(mouseY / ySize);
-
-  if (grid[ascisse][ordinate] == 1) {
+  ```
+  if (grid[axis][ordinates] == 1) {
     //alert("Already Clicked!");
     return;
   }
-```
+  ```
+##### Square creation
+  The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
 
+  ```
+  //-------fill a square according to emitted data
+  function fillRectangle(x, y) {
+
+    //-------coloring the rectangle
+    fill(51, 73, 108, 120);
+    stroke(255);
+
+    var axis = parseInt(x / xSize);
+    var ordinates = parseInt(y / ySize);
+
+    rect(axis * xSize, ordinates * ySize, xSize, ySize);
+    imageMode(CENTER);
+    image(imageArray[Math.floor(random(imageArray.length))], axis * xSize + xSize / 2, ordinates * ySize + ySize / 2, xSize / 2, ySize / 2);
+
+
+    checkCompletition(axis, ordinates);
+
+    }
+  }
+    ```
+##### Starting the timer
+    The timer starts when the first person taps the canvas.
+    The paragraph is created in the index.
+    ```
+    #timer {
+          text-align: center;
+          font-size: 180px;
+          margin-bottom: 5px;
+          margin-top: 30px;
+          margin-right: auto;
+          margin-left: auto;
+          font-family: "VT323";
+          color: #415b7e;
+
+        }
+    ```
+    The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the time
+    (Function contained in fillRectangle(){} function)
+      ```
+      function timeIt() {
+       decseconds++;
+        if (decseconds >= 9) {
+          decseconds -= 9;
+          seconds++;
+        }
+        if (seconds >= 60){
+          seconds -= 60;
+          minutes++;
+        }
+
+    	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
+      }
+      ```
+
+  (Function contained in fillRectangle(){} function)
+
+      ```
+      //-------first iteration, time starts
+    	if(showTime == 0){
+    		showTime = 1;
+    		timeVar = setInterval(timeIt, 100);
+    		document.getElementById("timer").style.display = "block";
+    	}
+      ```
 
 ## Difficulties encountered
 ![gdq](readme/difficulty1.PNG)
@@ -185,4 +230,3 @@ unction mouseClicked() {
 + Isabella Possaghi
 
 ![gdq](readme/team.PNG)
-

@@ -173,7 +173,7 @@ function handleCounter(data) {
     }
   }
     ```
-    ##### Starting the timer
+##### Starting the timer
         The timer starts when the first person taps the canvas, in this way the game has begun!.
         The #timer paragraph is created in the index.
         ```
@@ -217,8 +217,9 @@ function handleCounter(data) {
         		document.getElementById("timer").style.display = "block";
         	}
           ```
-    ##### Check Completition
+##### Check Completition
 
+          The grid that was previously used to check marks = 0 is the same used in this function to check that every values are marked "1". 
           ```
           //-------check that all values are marked "1"
           function checkCompletition(x, y) {

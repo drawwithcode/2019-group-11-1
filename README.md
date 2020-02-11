@@ -23,7 +23,7 @@ The concept of 2NT is easy, each user has to enter a room, the game will start w
 The app is divided in three main parts: about, play and leaderboard. 
 
 #### About page
-In this section the user can have a general idea of what is Games Done Quick and what this game is all about.
+In this section the user can have a general idea of what is Games Done Quick and what this game is all about. 
 
 
 

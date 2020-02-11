@@ -18,7 +18,8 @@ c. [Leaderboard](#leaderboard)<br>
 The goal of this event is to play an entire game or only a part of it with the intention of completing it as fast as possible.<br>
 For this occasion, 2nt was born: a game with the aim of achieving its goal by reaching a new record each time.<br>
 The game is very simple and intuitive: in fact, the user has to click only a square as fast as he can to complete the mission. For this reason, 2nt has been designed to be played during the event Games Done Quick: so that between one game session and the other, players can entertain themselves with this fun mini speedrun.
-Briefly: each user has to enter a room the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will enter the leader board.
+Briefly: each user has to enter a room the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will enter the leader board.<br>
+2NT was designed primarily for users who participate in GAMES DONE QUICK events, but it can be used by anyone even by less experienced players as it is very simple to play with. 
 
 
 ![gif](readme/gdq_gif.gif)

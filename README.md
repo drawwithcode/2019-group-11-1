@@ -5,7 +5,7 @@ It is built using the language p5.js and was developed for the final exam of the
 
 #### Table of contents
 1. [Contest](#1.-contest)
-2. [Structure of the game](#2.structure-of-the-game) <br>
+2. [Structure of the game](#structure-of-the-game) <br>
 a. [About page](#about-page)<br>
 b. [Play](#play)<br>
 c. [Leaderboard](#leaderboard)<br>
@@ -14,7 +14,7 @@ c. [Leaderboard](#leaderboard)<br>
 5. [Difficulties encountered](#difficulties-encountered)
 6. [Team](#team)
 
-## 1. Contest
+## Contest
 ![gdq](readme/gdq.png)
 2nt was designed for the event “Games Done Quick”. What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people. 
 The goal of this event is to play an entire game or only a part of it with the intention of completing it as fast as possible.<br>
@@ -26,15 +26,15 @@ Briefly: each user has to enter a room the game will start when the room has rea
 
 ![gif](readme/gdq_gif.gif)
 
-## 2. Structure of the game
+## Structure of the game
 The app is divided in three main parts: about, play and leaderboard. 
 ![gdq](readme/indice.PNG)
 
-#### a. About page
+#### About page
 In the about section the game is generally presented to the players in such a way that they have an idea what it is about. 
 ![gdq](readme/about.PNG)
 
-#### b. Play
+#### Play
 Here the user can play the game itself, the first page is an introduction to the game, giving the instructions of how it works.
 ![gdq](readme/howitworks.PNG)
 Clicking a button the player can enter the room he will be playing in and he has to wait for other players to join. 
@@ -43,19 +43,19 @@ When the number of players is reached, the first tap on one of the squares gets 
 When the grid is complete the time will stop and the score will be added to the leaderboard.
 
 
-#### c. Leaderboard
+#### Leaderboard
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs.<br>
 Unfortunately we were unable to complete this section which is not functional, but we have only created a mockup of it which can be found in the app. 
 ![gdq](readme/leaderboard.PNG)
 
 
-## 3. Visual ID
+## Visual ID
 We wanted to make the graphics of our game similar to that of most of the Games Done Quick videogames, that is 8-bit graphics. For this reason we thought of pixelated graphic elements designed by ourselves.<br> For the choice of colors we opted for a blue scale.<br> Fonts, on the other hand, are essential for entering the vintage mood of the game.
 ![gdq](readme/palette.PNG)
 ![gdq](readme/googlefont.PNG)
 ![gdq](readme/font2.PNG)
 
-## 4. Code Architecture
+## Code Architecture
 2NT is created for mobile devices, the user interacts with the game by tapping on the screen. 
 Now we present some of the most interesting features of the code.
 ##### Counting people entering the rooms
@@ -152,12 +152,12 @@ unction mouseClicked() {
 ```
 
 
-## 5. Difficulties encountered
+## Difficulties encountered
 ![gdq](readme/difficulty1.PNG)
 ![gdq](readme/difficulty2.PNG)
 
 
-## 6. Team
+## Team
 *2NT* was developed by:
 + Elisabetta D'Orto
 + Lorenzo Di Grazia

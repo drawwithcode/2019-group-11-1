@@ -11,7 +11,8 @@ b. [Play](#play)<br>
 c. [Leaderboard](#leaderboard)<br>
 3. [Visual ID](#visual-id)<br>
 4. [Code architecture](#code-architecture)
-5. [Team](#team)
+5. [Difficulties encountered](#difficulties-encountered)
+6. [Team](#team)
 
 ## Contest
 ![gdq](readme/gdq.png)
@@ -51,6 +52,9 @@ Unfortunately we were unable to complete this section which is not functional, b
 
 ## Visual ID
 We wanted to make the graphics of our game similar to that of most of the Games Done Quick videogames, that is 8-bit graphics. For this reason we thought of pixelated graphic elements designed by ourselves.<br> For the choice of colors we opted for a blue scale.<br> Fonts, on the other hand, are essential for entering the vintage mood of the game.
+![gdq](readme/palette.PNG)
+![gdq](readme/googlefont.PNG)
+![gdq](readme/font2.PNG)
 
 ## Code Architecture
 2NT is created for mobile devices, the user interacts with the game by tapping on the screen. 
@@ -148,10 +152,17 @@ unction mouseClicked() {
   }
 ```
 
+
+##Difficulties encountered
+![gdq](readme/difficulty1.PNG)
+![gdq](readme/difficulty2.PNG)
+
+
 ## Team
 *2NT* was developed by:
-+ Lorenzo Di Grazia
 + Elisabetta D'Orto
-+ Isabella Possaghi
++ Lorenzo Di Grazia
 + Erica Tronconi
++ Isabella Possaghi
+![gdq](readme/team.PNG)
 

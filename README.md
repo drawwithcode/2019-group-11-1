@@ -35,7 +35,7 @@ In this section the users can see the scores of all the different runs, every ro
 ## Key Features
 2NT is created for mobile devices, the user interacts with the game by tapping on the screen. 
 Now we present some of the most interesting features of the code.
-###### Counting people entering the rooms
+##### Counting people entering the rooms
 This id divided in two steps, the first part is written in the index, where the paragraph of the counter itself it's created.
 ```
 <body>
@@ -62,7 +62,7 @@ function handleCounter(data) {
   }
   ```
   
-###### Starting the timer
+##### Starting the timer
 The timer starts when the room is full and the first person taps on one of the squares.
 The paragraph is created in the index.
 ```
@@ -102,4 +102,29 @@ The timer itself is called by creating a function that defines which units to sh
 		document.getElementById("timer").style.display = "block";
 	}
   ```
-  
+##### Tapping just one square per user
+One interesting feature is the limit on the number of sqaures that one user can tap.
+In order to make the game collaborative, we set the limit of just one click per person, with this the game can not be completed by one user only but each person needs the help of others to win.
+```
+unction mouseClicked() {
+  //-------create an object containing the mouse position
+  var data = {
+    x: mouseX,
+    y: mouseY
+  }
+
+  //-------only one click
+  if (executed >= clickLimit) {
+    //alert("Only one!");
+    return;
+  }
+
+  var ascisse = parseInt(mouseX / xSize);
+  var ordinate = parseInt(mouseY / ySize);
+
+  if (grid[ascisse][ordinate] == 1) {
+    //alert("Already Clicked!");
+    return;
+  }
+```
+

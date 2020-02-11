@@ -149,8 +149,9 @@ function handleCounter(data) {
   }
   ```
 ##### Square creation
+  Through the interaction appears a darker square with an icon at the center, randomly picked from the images' array.
   The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
-
+  The filling of the entire grid is stated by a function called checkCompletition(){}, directly linked with the grid's coordinates.
   ```
   //-------fill a square according to emitted data
   function fillRectangle(x, y) {
@@ -165,7 +166,6 @@ function handleCounter(data) {
     rect(axis * xSize, ordinates * ySize, xSize, ySize);
     imageMode(CENTER);
     image(imageArray[Math.floor(random(imageArray.length))], axis * xSize + xSize / 2, ordinates * ySize + ySize / 2, xSize / 2, ySize / 2);
-
 
     checkCompletition(axis, ordinates);
 

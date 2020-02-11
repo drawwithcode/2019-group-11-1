@@ -228,7 +228,7 @@ In this way the grid could not be completed by one user only, but each person ne
     fillRectangle(data.x, data.y);
 
   }
-    ```
+  ```
 
 ##### Square creation
 Through the interaction appears a darker square with an icon at the center, randomly picked from the images' array.
@@ -253,7 +253,8 @@ The filling of the entire grid is stated by a function called checkCompletition(
 
     }
   }
-    ```
+  ````
+  
 ##### Starting the timer
 The timer starts when the first person taps the canvas, in this way the game has begun!.
 The #timer paragraph is created in the index.

@@ -1,5 +1,6 @@
 //-------PLAY
 
+//-------rooms arrays
 var roomNames = ['mario', 'luigi', 'yoshi', 'peach', 'bowser',
   'pikachu', 'charmander', 'squirtle', 'bulbasaur', 'kirby',
   'donkey kong', 'toad', 'link', 'princess zelda', 'samus',
@@ -39,25 +40,28 @@ function preload() {
 
 var socket;
 
+//-------grid variables
 var righe = 4;
 var colonne = 4;
 var executed = 0;
 var grid = new Array(righe);
 
+//-------rects dimensions variables
 var xSize;
 var ySize;
 
 var clickLimit = 1;
 
-var myVar;
+//-------timer variables
+var timeVar;
 
-//-----TIMER
 var showTime = 0;
 
 let minutes = 0;
 let seconds = 0;
 let decseconds = 0;
 
+//-------canvas creation
 function setup() {
   strokeWeight(4);
   let cnv = createCanvas(640, 640);
@@ -69,7 +73,7 @@ function setup() {
 
   // Define which function should be called when a new message
   // comes from the server with type "mouseBroadcast"
-  socket.on('mouseBroadcast', newDrawing);
+  socket.on('mouseBroadcast', newClick);
   socket.on('counter', handleCounter);
 
 
@@ -102,10 +106,8 @@ function setup() {
 }
 
 
-//-------Callback function called when a new message comes from the server
-//-------Data parameters will contain the received data
-function newDrawing(data) {
-
+//-------newClick function called when a new message comes from the server
+function newClick(data) {
 
   console.log('received:', data);
   fillRectangle(data.x, data.y);
@@ -119,13 +121,12 @@ function handleCounter(data) {
   console.log('received:', data);
   //prova per verificare il numero di persone!!
   if (data.count == 16) {
-    //console log prova!
-    //console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+     //
   }
 
 }
 
-
+//-------create the "action" to emit datas
 function mouseClicked() {
   //-------create an object containing the mouse position
   var data = {
@@ -147,13 +148,13 @@ function mouseClicked() {
     return;
   }
 
-
   socket.emit('mouse', data);
   console.log('sending: ', mouseX, mouseY);
   fillRectangle(mouseX, mouseY);
   executed++;
 }
 
+//-------datas emitted
 function fillRectangle(x, y) {
 
 
@@ -172,14 +173,14 @@ function fillRectangle(x, y) {
 	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
   }
 
-	//first iteration
+	//-------first iteration, time starts
 	if(showTime == 0){
 		showTime = 1;
-		myVar = setInterval(timeIt, 100);
+		timeVar = setInterval(timeIt, 100);
 		document.getElementById("timer").style.display = "block";
 	}
 
-  //coloring the rectangle
+  //-------coloring the rectangle
   fill(51, 73, 108, 120);
   stroke(255)
 
@@ -206,8 +207,8 @@ function checkCompletition(x, y) {
       }
     }
   }
-
-  clearInterval(myVar);
+  //-------time stops
+  clearInterval(timeVar);
   imageMode(CENTER);
   fill(51, 73, 108, 120);
   rect(0, 0,  640, 640);

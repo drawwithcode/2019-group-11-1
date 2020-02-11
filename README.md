@@ -9,8 +9,9 @@ It is built using the language p5.js and was developed for the final exam of the
 a. [About page](#about-page)<br>
 b. [Play](#play)<br>
 c. [Leaderboard](#leaderboard)<br>
-3. [Code architecture](#code-architecture)
-4. [Team](#team)
+3. [Visual ID](#visual-id)<br>
+4. [Code architecture](#code-architecture)
+5. [Team](#team)
 
 ## Contest
 ![gdq](readme/gdq.png)
@@ -48,7 +49,10 @@ Unfortunately we were unable to complete this section which is not functional, b
 ![gdq](readme/leaderboard.PNG)
 
 
-## Key Features
+## Visual ID
+We wanted to make the graphics of our game similar to that of most of the Games Done Quick videogames, that is 8-bit graphics. For this reason we thought of pixelated graphic elements designed by ourselves.<br> For the choice of colors we opted for a blue scale.<br> Fonts, on the other hand, are essential for entering the vintage mood of the game.
+
+## Code Architecture
 2NT is created for mobile devices, the user interacts with the game by tapping on the screen. 
 Now we present some of the most interesting features of the code.
 ##### Counting people entering the rooms

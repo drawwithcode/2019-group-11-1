@@ -16,12 +16,17 @@ c. [Leaderboard](#leaderboard)<br>
 
 ## Contest
 ![gdq](readme/gdq.png)
-2NT was designed for the event “Games Done Quick”. 
+2NT was designed for the event “Games Done Quick”.<br>
+<br>
 What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people. 
 The goal of this event is to play an entire game or only a part of it with the intention of completing it as fast as possible.<br>
+<br>
 For this occasion, 2NT was born: a game that reflects the main feature of GDQ events - completing the game as fast as possible!.<br>
-The game is very simple and intuitive - the user has to click only a square as fast as he can to complete the mission. For this reason, 2NT has been designed to be played during Games Done Quick breaks so that between one game session and the other, players can entertain themselves with this fun mini speedrun.
+<br>
+The game is very simple and intuitive - the user has to click only a square as fast as he can to complete the mission. For this reason, 2NT has been designed to be played during Games Done Quick breaks so that between one game session and the other, players can entertain themselves with this fun mini speedrun.<br>
+<br>
 Briefly: each user has to enter a room and the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will be registered in the leaderboard.<br>
+<br>
 2NT was designed primarily for users who participate in GDQ events, but it can be used by anyone and even by less experienced players as it is very simple to play with. 
 
 
@@ -48,21 +53,31 @@ When the grid is complete the time will stop and the score will be added to the 
 
 #### Leaderboard
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs.<br>
-Unfortunately we were unable to complete this section which is not functional, but we have only created a mockup of it which can be found in the app.<br>
+<br>
+Unfortunately we were unable to complete this section which is not functional [:(], but we have only created a mockup of it which can be found in the app.<br>
+<br>
 The names of the rooms are generated using two arrays containing a long list of videogame characters and a list of colors in order to have a large number of possible combinations for the room names.
 ![gdq](readme/leaderboard.PNG)
 ![gdq](readme/leaderboardgif.gif)
 
 
 ## Visual ID
-We wanted to make the graphics of our game similar to that of most of the videogames featured in GDQ runs so we chose to work with an 8-bit aesthetic. For this reason we thought of pixelated graphic elements designed by ourselves.<br> For the choice of colors we opted for a blue scale.<br> Fonts, on the other hand, are essential for entering the vintage and nichey mood of the game.
+We wanted to make the graphics of our game similar to that of most of the videogames featured in GDQ runs so we chose to work with an 8-bit aesthetic.<br>
+<br>
+For this reason we thought of iconic pixelated graphic elements designed or customized by ourselves.<br> 
+<br>
+For choosing the color palette we opted for a blue scale to resemble the aesthetic of the original logo of the event.<br> 
+<br>
+The fonts we chose, VT323 and Fipps, are essential for entering the vintage and nichey mood of the game.
 ![gdq](readme/palette.PNG)
 ![gdq](readme/googlefont.PNG)
 ![gdq](readme/font2.PNG)
 
 ## Code Architecture
-2NT is created for mobile devices, the user interacts with the game by tapping on the screen. 
-Now we present some of the most interesting features of the code.
+2NT has been developed for mobile devices so the user interacts with the interface by tapping and scrolling (where it is allowed) on the screen.<br>
+<br>
+Now we will present some of the most interesting features of the code.<br>
+
 ##### Counting people entering the rooms
 This id divided in two steps, the first part is written in the index, where the paragraph of the counter itself it's created.
 ```

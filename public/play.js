@@ -86,7 +86,7 @@ function setup() {
   noFill();
 
 
-  //-------grid used to make squares appear according to their position
+  //-------initialize the array, check that every value is marked "0"
   for (var i = 0; i < grid.length; i++) {
     grid[i] = new Array(columns);
     for (var k = 0; k < grid.length; k++) {
@@ -99,10 +99,8 @@ function setup() {
     for (var y = 0; y < columns; y++) {
 
       rect(i * xSize, y * ySize, xSize, ySize);
-
     }
   }
-
 }
 
 
@@ -154,7 +152,7 @@ function mouseClicked() {
   executed++;
 }
 
-//-------datas emitted
+//-------fill a square according to emitted data
 function fillRectangle(x, y) {
 
 
@@ -169,7 +167,6 @@ function fillRectangle(x, y) {
       minutes++;
     }
 
-	//time ++;
 	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
   }
 

@@ -173,50 +173,81 @@ function handleCounter(data) {
     }
   }
     ```
-##### Starting the timer
-    The timer starts when the first person taps the canvas.
-    The paragraph is created in the index.
-    ```
-    #timer {
-          text-align: center;
-          font-size: 180px;
-          margin-bottom: 5px;
-          margin-top: 30px;
-          margin-right: auto;
-          margin-left: auto;
-          font-family: "VT323";
-          color: #415b7e;
+    ##### Starting the timer
+        The timer starts when the first person taps the canvas, in this way the game has begun!.
+        The #timer paragraph is created in the index.
+        ```
+        #timer {
+              text-align: center;
+              font-size: 180px;
+              margin-bottom: 5px;
+              margin-top: 30px;
+              margin-right: auto;
+              margin-left: auto;
+              font-family: "VT323";
+              color: #415b7e;
 
-        }
-    ```
-    The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the time
-    (Function contained in fillRectangle(){} function)
-      ```
-      function timeIt() {
-       decseconds++;
-        if (decseconds >= 9) {
-          decseconds -= 9;
-          seconds++;
-        }
-        if (seconds >= 60){
-          seconds -= 60;
-          minutes++;
-        }
+            }
+        ```
+        The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.
+        (Function contained in fillRectangle(){} function)
+          ```
+          function timeIt() {
+           decseconds++;
+            if (decseconds >= 9) {
+              decseconds -= 9;
+              seconds++;
+            }
+            if (seconds >= 60){
+              seconds -= 60;
+              minutes++;
+            }
 
-    	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
-      }
-      ```
+        	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
+          }
+          ```
+      We used setInterval() to call a function periodically, based on a specified time interval.
+      (Conditional written in fillRectangle(){} function).
 
-  (Function contained in fillRectangle(){} function)
+          ```
+          //-------first iteration, time starts
+        	if(showTime == 0){
+        		showTime = 1;
+        		timeVar = setInterval(timeIt, 100);
+        		document.getElementById("timer").style.display = "block";
+        	}
+          ```
+    ##### Check Completition
 
-      ```
-      //-------first iteration, time starts
-    	if(showTime == 0){
-    		showTime = 1;
-    		timeVar = setInterval(timeIt, 100);
-    		document.getElementById("timer").style.display = "block";
-    	}
-      ```
+          ```
+          //-------check that all values are marked "1"
+          function checkCompletition(x, y) {
+
+            grid[x][y] = 1;
+
+            for (var i = 0; i < grid.length; i++) {
+              for (var y = 0; y < grid[i].length; y++) {
+                if (grid[i][y] == 0) {
+                  return;
+                }
+              }
+            }
+
+            //-------console log with time + random room
+            console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+          }
+          ```
+          We used clearInterval to reset the timer created with setInterval().
+          (Conditional written in checkCompletition(){} function).
+          ```
+          //-------time stops
+          clearInterval(timeVar);
+          imageMode(CENTER);
+          fill(51, 73, 108, 120);
+          rect(0, 0,  640, 640);
+          //alert("YAY!");
+          image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
+          ```
 
 ## Difficulties encountered
 ![gdq](readme/difficulty1.PNG)

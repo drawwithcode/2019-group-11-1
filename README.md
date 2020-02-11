@@ -49,6 +49,7 @@ When the grid is complete the time will stop and the score will be added to the 
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs.<br>
 Unfortunately we were unable to complete this section which is not functional, but we have only created a mockup of it which can be found in the app. 
 ![gdq](readme/leaderboard.PNG)
+![gdq](readme/leaderboardgif.gif)
 
 
 ## Visual ID

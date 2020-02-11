@@ -152,7 +152,7 @@ unction mouseClicked() {
 ```
 
 
-##Difficulties encountered
+## Difficulties encountered
 ![gdq](readme/difficulty1.PNG)
 ![gdq](readme/difficulty2.PNG)
 

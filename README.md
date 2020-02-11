@@ -8,7 +8,6 @@
 * [About page](#about-page)<br>
 * [Play](#play)<br>
 * [Leaderboard](#leaderboard)<br>
-* [Interactions](#interactions)<br>
 3. [Key Features](#key-features)
 4. [Team](#team)
 
@@ -33,7 +32,7 @@ When the grid is complete the time will stop and the score will be added to the 
 #### Leaderboard
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs. 
 
-#### Interactions
+## Key Features
 2NT is created for mobile devices, the user interacts with the game by tapping on the screen. 
 Now we present some of the most interesting features of the code.
 ###### Counting people entering the rooms
@@ -62,3 +61,45 @@ function handleCounter(data) {
   }
   }
   ```
+  
+###### Starting the timer
+The timer starts when the room is full and the first person taps on one of the squares.
+The paragraph is created in the index.
+```
+#timer {
+      text-align: center;
+      font-size: 180px;
+      margin-bottom: 5px;
+      margin-top: 30px;
+      margin-right: auto;
+      margin-left: auto;
+      font-family: "VT323";
+      color: #415b7e;
+
+    }
+```
+The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. 
+  ```
+  function timeIt() {
+   decseconds++;
+    if (decseconds >= 9) {
+      decseconds -= 9;
+      seconds++;
+    }
+    if (seconds >= 60){
+      seconds -= 60;
+      minutes++;
+    }
+
+	//time ++;
+	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
+  }
+
+	//first iteration
+	if(showTime == 0){
+		showTime = 1;
+		myVar = setInterval(timeIt, 100);
+		document.getElementById("timer").style.display = "block";
+	}
+  ```
+  

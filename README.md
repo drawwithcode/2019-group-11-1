@@ -124,7 +124,7 @@ When a disconnection occurs, the counter decreases.
   }
   ```
 ### Passage from Server.js to Play.js
-Instructions concerning data transit are inserted in the play.js file.
+Instructions concerning data transit are inserted in the setup(){} function of play.js file.
 
 ```
 socket = io();

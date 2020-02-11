@@ -254,7 +254,7 @@ The filling of the entire grid is stated by a function called checkCompletition(
     }
   }
   ````
-  
+
 ##### Starting the timer
 The timer starts when the first person taps the canvas, in this way the game has begun!.
 The #timer paragraph is created in the index.
@@ -333,7 +333,7 @@ A random combination of elements picked from the two arrays(var roomNames + var 
           }
           ```
 
-##### Check Completion
+##### Fix the screen
 Avoid the screen sliding and page refresh in some devices.
 
           ```

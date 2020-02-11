@@ -41,6 +41,7 @@ Clicking a button the player can enter the room he will be playing in and he has
 When the number of players is reached, the first tap on one of the squares gets the time started and then all the players just have to tap to complete the game. For each players it's possible just one tap.
 ![gdq](readme/play.PNG)
 ![gdq](readme/playgif.gif) <br>
+
 When the grid is complete the time will stop and the score will be added to the leaderboard.
 
 
@@ -48,6 +49,7 @@ When the grid is complete the time will stop and the score will be added to the 
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs.<br>
 Unfortunately we were unable to complete this section which is not functional, but we have only created a mockup of it which can be found in the app. 
 ![gdq](readme/leaderboard.PNG)
+![gdq](readme/leaderboardgif.gif)
 
 
 ## Visual ID

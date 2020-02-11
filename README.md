@@ -16,29 +16,30 @@ c. [Leaderboard](#leaderboard)<br>
 
 ## Contest
 ![gdq](readme/gdq.png)
-2nt was designed for the event “Games Done Quick”. What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people. 
+2NT was designed for the event “Games Done Quick”. 
+What is it? Games Done Quick is an event that includes a series of charity video games marathons held twice a year. It features high-level gameplay by speedrunners and has an attendance of average 2000 people. 
 The goal of this event is to play an entire game or only a part of it with the intention of completing it as fast as possible.<br>
-For this occasion, 2nt was born: a game with the aim of achieving its goal by reaching a new record each time.<br>
-The game is very simple and intuitive: in fact, the user has to click only a square as fast as he can to complete the mission. For this reason, 2nt has been designed to be played during the event Games Done Quick: so that between one game session and the other, players can entertain themselves with this fun mini speedrun.
-Briefly: each user has to enter a room the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will enter the leader board.<br>
-2NT was designed primarily for users who participate in GAMES DONE QUICK events, but it can be used by anyone even by less experienced players as it is very simple to play with. 
+For this occasion, 2NT was born: a game that reflects the main feature of GDQ events - completing the game as fast as possible!.<br>
+The game is very simple and intuitive - the user has to click only a square as fast as he can to complete the mission. For this reason, 2NT has been designed to be played during Games Done Quick breaks so that between one game session and the other, players can entertain themselves with this fun mini speedrun.
+Briefly: each user has to enter a room and the game will start when the room has reached the number of 16 players in it. Then a stopwatch will start, and each person just needs to touch one of the squares, once the grid is all complete the time will stop, and the score will be registered in the leaderboard.<br>
+2NT was designed primarily for users who participate in GDQ events, but it can be used by anyone and even by less experienced players as it is very simple to play with. 
 
 
 ![gif](readme/gdq_gif.gif)
 
 ## Structure of the game
-The app is divided in three main parts: about, play and leaderboard. 
+The app is divided in three main parts: "about", "play" and "leaderboard". There is also a link directing to GDQ website. 
 ![gdq](readme/indice.PNG)
 
 #### About page
-In the about section the game is generally presented to the players in such a way that they have an idea what it is about. 
+In the "about" section the game is presented to the players in such a way that they have an idea what it is about. 
 ![gdq](readme/about.PNG)
 
 #### Play
-Here the user can play the game itself, the first page is an introduction to the game, giving the instructions of how it works.
+Here the user can play the game itself, the first page is an introduction to the game taht shows the instructions of how it works.
 ![gdq](readme/howitworks.PNG)
-Clicking a button the player can enter the room he will be playing in and he has to wait for other players to join. 
-When the number of players is reached, the first tap on one of the squares gets the time started and then all the players just have to tap to complete the game. For each players it's possible just one tap.
+Clicking a button the player can enter the room he will be playing in and he has to wait for the other players to join. 
+When the number of players is reached, the first tap on one of the squares gets the time started and then all the players just have to tap to complete the game. For each players it's possible just to tap once.
 ![gdq](readme/play.PNG)
 ![gdq](readme/playgif.gif) <br>
 
@@ -47,13 +48,14 @@ When the grid is complete the time will stop and the score will be added to the 
 
 #### Leaderboard
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs.<br>
-Unfortunately we were unable to complete this section which is not functional, but we have only created a mockup of it which can be found in the app. 
+Unfortunately we were unable to complete this section which is not functional, but we have only created a mockup of it which can be found in the app.<br>
+The names of the rooms are generated using two arrays containing a long list of videogame characters and a list of colors in order to have a large number of possible combinations for the room names.
 ![gdq](readme/leaderboard.PNG)
 ![gdq](readme/leaderboardgif.gif)
 
 
 ## Visual ID
-We wanted to make the graphics of our game similar to that of most of the Games Done Quick videogames, that is 8-bit graphics. For this reason we thought of pixelated graphic elements designed by ourselves.<br> For the choice of colors we opted for a blue scale.<br> Fonts, on the other hand, are essential for entering the vintage mood of the game.
+We wanted to make the graphics of our game similar to that of most of the videogames featured in GDQ runs so we chose to work with an 8-bit aesthetic. For this reason we thought of pixelated graphic elements designed by ourselves.<br> For the choice of colors we opted for a blue scale.<br> Fonts, on the other hand, are essential for entering the vintage and nichey mood of the game.
 ![gdq](readme/palette.PNG)
 ![gdq](readme/googlefont.PNG)
 ![gdq](readme/font2.PNG)

@@ -12,8 +12,8 @@ c. [Leaderboard](#leaderboard)<br>
 3. [Visual ID](#visual-id)<br>
 4. [Code architecture](#code-architecture)
 5. [Difficulties encountered](#difficulties-encountered)
-6. [Team](#team)
-7. [Future developments](#future-developments)
+6. [Future developments](#future-developments)
+7. [Team](#team)
 
 ## Contest
 ![gdq](readme/gdq.png)

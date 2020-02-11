@@ -81,10 +81,12 @@ Now we will present some of the most interesting features of the code.<br>
 
 ### Server.js
 ##### Data emission & reception
+The newConnection(){} function allows the counting of user connections to the web page. To do this, sockets are counted together with ip addresses, which are inserted into an array. Each time a connection occurs, the number of the counter increases. To gain this result, the web application "express" has been used. The mouseMessage(){} function broadcasts data received from other clients, plus the ones generated with "this" device.
 
+```io.on('connection', newConnection);
+io.on('disconnect', newDisconnect);
 
-
-```var count = 0;
+var count = 0;
 var $ipsConnected = [];
 
 function newConnection(socket){
@@ -107,6 +109,7 @@ function newConnection(socket){
 		console.log(data);
 	}
   ```
+When a disconnection occurs, the counter decreases.
 
   ```
   function newDisconnect(socket){
@@ -120,13 +123,21 @@ function newConnection(socket){
     	}
   }
   ```
+### Passage from Server.js to Play.js
+Instructions concerning data transit are inserted in the play.js file.
 
+```
+socket = io();
+
+socket.on('mouseBroadcast', newClick);
+socket.on('counter', handleCounter);
+
+```
 
 ### Play.js
 ##### Grid construction
 The base of our game is a grid made of sixteen squares. Inside the preload function occurs the construction of the array concerning the values' control. As a starting point, we decided to state a value marked = 0.
 Then a grid is constructed, according to the canvas' dimensions, in order to obtain perfectly equal square spaces.
-
 
 ```
 function setup() {
@@ -182,7 +193,7 @@ function handleCounter(data) {
 }
   ```
 ##### Interact with the canvas
-The action taken by each user is described in the mouseClicked{} function.
+The action taken by each user is described in the mouseClicked(){} function.
 The data emitted by users are the "tap" positions on the canvas. When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented. We used the parseInt() to obtain a positive integer.
 
   ```

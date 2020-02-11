@@ -40,6 +40,7 @@ Here the user can play the game itself, the first page is an introduction to the
 Clicking a button the player can enter the room he will be playing in and he has to wait for other players to join. 
 When the number of players is reached, the first tap on one of the squares gets the time started and then all the players just have to tap to complete the game. For each players it's possible just one tap.
 ![gdq](readme/play.PNG)
+![gdq](readme/playgif.gif) <br>
 When the grid is complete the time will stop and the score will be added to the leaderboard.
 
 

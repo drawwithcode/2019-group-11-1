@@ -79,13 +79,40 @@ The fonts we chose, VT323 and Fipps, are essential for entering the vintage and 
 <br>
 Now we will present some of the most interesting features of the code.<br>
 
+##### Grid construction
+The base of our game is a grid made of sixteen squares. Inside the preload function occurs the construction of the array concerning the values' control. As a starting point, we decided to state a value marked = 0.
+Then a grid is constructed, according to the canvas' dimensions, in order to obtain perfectly equal square spaces.
 
 
+```
+function setup() {
+  strokeWeight(4);
+  let cnv = createCanvas(640, 640);
+  cnv.position((windowWidth / 2) - 320, (windowHeight / 2) - 320);
 
+xSize = 640 / rows;
+ySize = 640 / columns;
 
+//-------initialize the array, check that every value is marked "0"
+for (var i = 0; i < grid.length; i++) {
+  grid[i] = new Array(columns);
+  for (var k = 0; k < grid.length; k++) {
+    grid[i][k] = 0;
+  }
+}
+
+//-------square grid
+for (var i = 0; i < rows; i++) {
+  for (var y = 0; y < columns; y++) {
+
+    rect(i * xSize, y * ySize, xSize, ySize);
+  }
+ }
+}
+```
 
 ##### Counting people entering the room
-     This passage is divided in two steps, the first one concerns the creation of an id called "guests" written in the index (play.html), where the paragraph of the counter itself it's created.
+This passage is divided in two steps, the first one concerns the creation of an id called "guests" written in the index (play.html), where the paragraph of the counter itself it's created.
 
 ```
 <body>
@@ -95,8 +122,7 @@ Now we will present some of the most interesting features of the code.<br>
 ```
     The second part of the command, the one that triggers the event, is created by calling a function and verify the number of people, by doing so the number of connections could be monitored. The desired number in this game is sixteen, corresponding to sixteen users. The number is retrieved from the "guests" paragraph.
 
-```
-//-------count connections number
+```//-------count connections number
 function handleCounter(data) {
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
@@ -107,13 +133,10 @@ function handleCounter(data) {
 }
   ```
 ##### Interact with the canvas
-      The action taken by each user is described in the mouseClicked{} function.
-      The data emitted by users are the "tap" positions on the canvas.
-      When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented.
-      We used the parseInt() to obtain a positive integer.
+The action taken by each user is described in the mouseClicked{} function.
+The data emitted by users are the "tap" positions on the canvas. When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented. We used the parseInt() to obtain a positive integer.
 
-  ```
-  function mouseClicked() {
+  ```function mouseClicked() {
     //-------create an object containing the mouse position
     var data = {
       x: mouseX,
@@ -129,12 +152,11 @@ function handleCounter(data) {
     executed++;
   }
     ```
-    The interaction is limited to one tap for every single user in order to make the game collaborative.
-    In this way the grid could not be completed by one user only, but each person needs the help of others to win.
-    (Conditional written in mouseClicked(){} function).
+The interaction is limited to one tap for every single user in order to make the game collaborative.
+In this way the grid could not be completed by one user only, but each person needs the help of others to win.
+(Conditional written in mouseClicked(){} function).
 
-  ```
-    //-------only one click
+  ```//-------only one click
     if (executed >= clickLimit) {
       //alert("Only one!");
       return;
@@ -144,19 +166,28 @@ function handleCounter(data) {
   In this way the user could only makes a single square appear, without an interaction with squares that have been already generated.
   (Conditional written in mouseClicked(){} function).
 
-  ```
-  if (grid[axis][ordinates] == 1) {
+  ```if (grid[axis][ordinates] == 1) {
     //alert("Already Clicked!");
     return;
   }
   ```
-##### Square creation
-      Through the interaction appears a darker square with an icon at the center, randomly picked from the images' array.
-      The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
-      The filling of the entire grid is stated by a function called checkCompletition(){}, directly linked with the grid's coordinates.
+  The reception of data sent by other users is implemented through the function newClick(){}.
 
   ```
-  //-------fill a square according to emitted data
+  function newClick(data) {
+
+    console.log('received:', data);
+    fillRectangle(data.x, data.y);
+
+  }
+    ```
+
+##### Square creation
+Through the interaction appears a darker square with an icon at the center, randomly picked from the images' array.
+The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
+The filling of the entire grid is stated by a function called checkCompletition(){}, directly linked with the grid's coordinates.
+
+  ```//-------fill a square according to emitted data
   function fillRectangle(x, y) {
 
     //-------coloring the rectangle
@@ -176,10 +207,10 @@ function handleCounter(data) {
   }
     ```
 ##### Starting the timer
-      The timer starts when the first person taps the canvas, in this way the game has begun!.
-      The #timer paragraph is created in the index.
-        ```
-        #timer {
+The timer starts when the first person taps the canvas, in this way the game has begun!.
+The #timer paragraph is created in the index.
+
+        ```#timer {
               text-align: center;
               font-size: 180px;
               margin-bottom: 5px;
@@ -194,8 +225,8 @@ function handleCounter(data) {
             <p id="timer" style="display: none"></p>
           </body>
         ```
-      The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.
-      (Function contained in fillRectangle(){} function)
+The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.(Function contained in fillRectangle(){} function).
+
           ```
           function timeIt() {
            decseconds++;
@@ -211,8 +242,8 @@ function handleCounter(data) {
         	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
           }
           ```
-      We used setInterval() to call a function periodically, based on a specified time interval.
-      (Conditional written in fillRectangle(){} function).
+We used setInterval() to call a function periodically, based on a specified time interval.
+(Conditional written in fillRectangle(){} function).
 
           ```
           //-------first iteration, time starts
@@ -223,12 +254,10 @@ function handleCounter(data) {
         	}
           ```
 ##### Check Completion
+The grid that was previously used to check marks = 0 is the same constructed in this function to check that every values are marked "1". If every value results "1", then the grid is completed and a " YAY!" message will appear.
+The timer stops and shows how long did it take to fill all the squares. We used clearInterval to reset the timer created with setInterval().
 
-      The grid that was previously used to check marks = 0 is the same constructed in this function to check that every values are marked "1". If every value results "1", then the grid is completed and a " YAY!" message will appear.
-      The timer stops and shows how long did it take to fill all the squares.
-      We used clearInterval to reset the timer created with setInterval().
-
-      A random combination of elements picked from the two arrays(var roomNames + var roomColors) generates a room nickname associated with game time. (Only visible in console.log, for now...).
+A random combination of elements picked from the two arrays(var roomNames + var roomColors) generates a room nickname associated with game time. (Only visible in console.log, for now...).
 
           ```
           //-------check that all values are marked "1"
@@ -256,7 +285,8 @@ function handleCounter(data) {
           ```
 
 ##### Check Completion
-      Avoid the screen sliding and page refresh in some devices.
+Avoid the screen sliding and page refresh in some devices.
+
           ```
           //-------fixed screen when you touch it
           function touchMoved() {

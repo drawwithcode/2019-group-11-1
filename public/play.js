@@ -117,7 +117,7 @@ function handleCounter(data) {
 
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
-  //prova per verificare il numero di persone!!
+  //test to verify number of connections
   if (data.count == 16) {
      //
   }

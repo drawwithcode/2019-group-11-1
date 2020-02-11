@@ -4,8 +4,8 @@
 It is built using the language p5.js and was developed for the final exam of the course Creative Coding at Politecnico di Milano. 
 
 #### Table of contents
-1. [Contest](#contest)
-2. [Structure of the game](#structure-of-the-game) <br>
+1. [Contest](#1.-contest)
+2. [Structure of the game](#2.-structure-of-the-game) <br>
 a. [About page](#about-page)<br>
 b. [Play](#play)<br>
 c. [Leaderboard](#leaderboard)<br>

@@ -25,10 +25,11 @@ Briefly: each user has to enter a room the game will start when the room has rea
 
 ## Structure of the game
 The app is divided in three main parts: about, play and leaderboard. 
+![gdq](readme/indice.PNG)
 
 #### About page
 In the about section the game is generally presented to the players in such a way that they have an idea what it is about. 
-![gdq](readme/gdq.png)
+![gdq](readme/about.PNG)
 
 #### Play
 Here the user can play the game itself, the first page is an introduction to the game, giving the instructions of how it works. Clicking a button the player can enter the room he will be playing in and he has to wait for other players to join. 

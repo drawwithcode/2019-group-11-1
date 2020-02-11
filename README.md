@@ -13,6 +13,7 @@ c. [Leaderboard](#leaderboard)<br>
 4. [Code architecture](#code-architecture)
 5. [Difficulties encountered](#difficulties-encountered)
 6. [Team](#team)
+7. [Future developments](#future-developments)
 
 ## Contest
 ![gdq](readme/gdq.png)
@@ -221,12 +222,12 @@ function handleCounter(data) {
 ![gdq](readme/difficulty1.PNG)
 ![gdq](readme/difficulty2.PNG)
 
+## Future developments
+![gdq](readme/geolocation.PNG)
+![gdq](readme/leaderboard2.PNG)
+![gdq](readme/leaderboard3.PNG)
 
 ## Team
 *2NT* was developed by:
-+ Elisabetta D'Orto
-+ Lorenzo Di Grazia
-+ Erica Tronconi
-+ Isabella Possaghi
 
 ![gdq](readme/team.PNG)

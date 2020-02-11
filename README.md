@@ -16,6 +16,7 @@
 ![gdq](readme/event.jpg)
 Games Done Quick is a series of charity video games marathons held twice a year. It features high level gamplay from speedrunners and has an attendance of average 2000 people. 2NT is inspired by and created for these events, the idea is to make the public run its own marathon during the breaks from the gameplays.
 The concept of 2NT is easy, each user has to enter a room, the game will start when the room has reached the nember of 16 players in it. Then a stopwatch will start and each person just needs to touch one of the squares, once the grid is all complete the time will stop and the score will enter the leaderboard. 
+
 ![gif](readme/gdq.gif)
 
 ## Storyboard and Interactions

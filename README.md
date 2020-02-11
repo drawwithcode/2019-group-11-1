@@ -79,37 +79,38 @@ The fonts we chose, VT323 and Fipps, are essential for entering the vintage and 
 <br>
 Now we will present some of the most interesting features of the code.<br>
 
-##### Counting people entering the rooms
-This id divided in two steps, the first part is written in the index, where the paragraph of the counter itself it's created.
+
+
+
+
+
+##### Counting people entering the room
+     This passage is divided in two steps, the first one concerns the creation of an id called "guests" written in the index (play.html), where the paragraph of the counter itself it's created.
+
 ```
 <body>
-
   <p id="toptext"> The run starts with 16 players<br>you are now</p>
-
   <p id="guests"> </p>
-
-  <p id="timer" style="display: none"></p>
-
 </body>
 ```
-The second part of the command, the one that triggers the event, is created by calling a function and verify the number of people until they reach 16.
-```
-function handleCounter(data) {
+    The second part of the command, the one that triggers the event, is created by calling a function and verify the number of people, by doing so the number of connections could be monitored. The desired number in this game is sixteen, corresponding to sixteen users. The number is retrieved from the "guests" paragraph.
 
+```
+//-------count connections number
+function handleCounter(data) {
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
-  //prova per verificare il numero di persone!!
+  //test to verify number of connections
   if (data.count == 16) {
-    //console log prova!
-    //console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
+     //
   }
-  }
+}
   ```
 ##### Interact with the canvas
-  The action taken by each user is described in the mouseClicked{} function.
-  The data emitted by users are the "tap" positions on the canvas.
-  When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented.
-  We used the parseInt() to obtain a positive integer.
+      The action taken by each user is described in the mouseClicked{} function.
+      The data emitted by users are the "tap" positions on the canvas.
+      When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented.
+      We used the parseInt() to obtain a positive integer.
 
   ```
   function mouseClicked() {
@@ -128,9 +129,9 @@ function handleCounter(data) {
     executed++;
   }
     ```
-  The interaction is limited to one tap for every single user in order to make the game collaborative.
-  In this way the grid could not be completed by one user only, but each person needs the help of others to win.
-  (Conditional written in mouseClicked(){} function).
+    The interaction is limited to one tap for every single user in order to make the game collaborative.
+    In this way the grid could not be completed by one user only, but each person needs the help of others to win.
+    (Conditional written in mouseClicked(){} function).
 
   ```
     //-------only one click
@@ -189,6 +190,9 @@ function handleCounter(data) {
               color: #415b7e;
 
             }
+          <body>
+            <p id="timer" style="display: none"></p>
+          </body>
         ```
       The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.
       (Function contained in fillRectangle(){} function)

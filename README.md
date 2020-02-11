@@ -32,9 +32,14 @@ In the about section the game is generally presented to the players in such a wa
 ![gdq](readme/about.PNG)
 
 #### Play
-Here the user can play the game itself, the first page is an introduction to the game, giving the instructions of how it works. Clicking a button the player can enter the room he will be playing in and he has to wait for other players to join. 
+Here the user can play the game itself, the first page is an introduction to the game, giving the instructions of how it works.
+![gdq](readme/howitworks.PNG)
+Clicking a button the player can enter the room he will be playing in and he has to wait for other players to join. 
+![gdq](readme/1_play.PNG)
 When the number of players is reached, the first tap on one of the squares gets the time started and then all the players just have to tap to complete the game. For each players it's possible just one tap.
+![gdq](readme/2_play.PNG)
 When the grid is complete the time will stop and the score will be added to the leaderboard.
+![gdq](readme/yay.PNG)
 
 #### Leaderboard
 In this section the users can see the scores of all the different runs, every room has a name assigned randomly that helps players identify which score his theirs. 

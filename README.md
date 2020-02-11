@@ -168,9 +168,10 @@ This passage is divided in two steps, the first one concerns the creation of an 
   <p id="guests"> </p>
 </body>
 ```
-    The second part of the command, the one that triggers the event, is created by calling a function and verify the number of people, by doing so the number of connections could be monitored. The desired number in this game is sixteen, corresponding to sixteen users. The number is retrieved from the "guests" paragraph.
+The second part of the command, the one that triggers the event, is created by calling a function and verify the number of people, by doing so the number of connections could be monitored. The desired number in this game is sixteen, corresponding to sixteen users. The number is retrieved from the "guests" paragraph.
 
-```//-------count connections number
+```
+//-------count connections number
 function handleCounter(data) {
   document.getElementById("guests").innerHTML = data.count;
   console.log('received:', data);
@@ -184,7 +185,8 @@ function handleCounter(data) {
 The action taken by each user is described in the mouseClicked{} function.
 The data emitted by users are the "tap" positions on the canvas. When an interaction with the grid occurs, the fillRectangle{} (associated with the position's data) function is implemented. We used the parseInt() to obtain a positive integer.
 
-  ```function mouseClicked() {
+  ```
+  function mouseClicked() {
     //-------create an object containing the mouse position
     var data = {
       x: mouseX,
@@ -199,22 +201,24 @@ The data emitted by users are the "tap" positions on the canvas. When an interac
     fillRectangle(mouseX, mouseY);
     executed++;
   }
-    ```
+```
 The interaction is limited to one tap for every single user in order to make the game collaborative.
 In this way the grid could not be completed by one user only, but each person needs the help of others to win.
 (Conditional written in mouseClicked(){} function).
 
-  ```//-------only one click
+  ```
+  //-------only one click
     if (executed >= clickLimit) {
       //alert("Only one!");
       return;
     }
   ```
-  To avoid click repetition on the same square, a limitation has been inserted.
-  In this way the user could only makes a single square appear, without an interaction with squares that have been already generated.
-  (Conditional written in mouseClicked(){} function).
+To avoid click repetition on the same square, a limitation has been inserted.
+In this way the user could only makes a single square appear, without an interaction with squares that have been already generated.
+(Conditional written in mouseClicked(){} function).
 
-  ```if (grid[axis][ordinates] == 1) {
+  ```
+  if (grid[axis][ordinates] == 1) {
     //alert("Already Clicked!");
     return;
   }
@@ -235,7 +239,8 @@ Through the interaction appears a darker square with an icon at the center, rand
 The four sides of the square perfectly follow the limits of the grid's space, because the same spatial variable are used.
 The filling of the entire grid is stated by a function called checkCompletition(){}, directly linked with the grid's coordinates.
 
-  ```//-------fill a square according to emitted data
+  ```
+  //-------fill a square according to emitted data
   function fillRectangle(x, y) {
 
     //-------coloring the rectangle
@@ -259,7 +264,8 @@ The filling of the entire grid is stated by a function called checkCompletition(
 The timer starts when the first person taps the canvas, in this way the game has begun!.
 The #timer paragraph is created in the index.
 
-        ```#timer {
+```
+	#timer {
               text-align: center;
               font-size: 180px;
               margin-bottom: 5px;
@@ -273,10 +279,10 @@ The #timer paragraph is created in the index.
           <body>
             <p id="timer" style="display: none"></p>
           </body>
-        ```
+```
 The timer itself is called by creating a function that defines which units to show (seconds and tenths of seconds) and then set the conditions for which the timer starts. On the screen the HTML content of #timer is shown.(Function contained in fillRectangle(){} function).
 
-          ```
+```
           function timeIt() {
            decseconds++;
             if (decseconds >= 9) {
@@ -290,25 +296,25 @@ The timer itself is called by creating a function that defines which units to sh
 
         	document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + decseconds;
           }
-          ```
+```
 We used setInterval() to call a function periodically, based on a specified time interval.
 (Conditional written in fillRectangle(){} function).
 
-          ```
+```
           //-------first iteration, time starts
         	if(showTime == 0){
         		showTime = 1;
         		timeVar = setInterval(timeIt, 100);
         		document.getElementById("timer").style.display = "block";
         	}
-          ```
+```
 ##### Check Completion
 The grid that was previously used to check marks = 0 is the same constructed in this function to check that every values are marked "1". If every value results "1", then the grid is completed and a " YAY!" message will appear.
 The timer stops and shows how long did it take to fill all the squares. We used clearInterval to reset the timer created with setInterval().
 
 A random combination of elements picked from the two arrays(var roomNames + var roomColors) generates a room nickname associated with game time. (Only visible in console.log, for now...).
 
-          ```
+```
           //-------check that all values are marked "1"
           function checkCompletition(x, y) {
 
@@ -331,17 +337,16 @@ A random combination of elements picked from the two arrays(var roomNames + var 
             //-------console log with time + random room
             console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
           }
-          ```
+```
 
 ##### Fix the screen
 Avoid the screen sliding and page refresh in some devices.
-
-          ```
+```
           //-------fixed screen when you touch it
           function touchMoved() {
             return false;
           }
-          ```
+```
 
 ## Difficulties encountered
 ![gdq](readme/difficulty1.PNG)

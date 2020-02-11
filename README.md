@@ -1,7 +1,7 @@
 ![header](readme/head.png)
 ## About
 2NT is an interactive game app, inspired by Games Done Quick, that revolves around speed and collaboration between different users. 
-It is built using the language p5.js and was developed for the final exam of the course Creative Coding at Politecnico di Milano. 
+It is built using p5.js, HTML and CSS languages and it was developed for the final exam of the course Creative Coding at Politecnico di Milano. 
 
 #### Table of contents
 1. [Contest](#1.-contest)

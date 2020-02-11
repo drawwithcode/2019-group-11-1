@@ -219,7 +219,12 @@ function handleCounter(data) {
           ```
 ##### Check Completition
 
-          The grid that was previously used to check marks = 0 is the same used in this function to check that every values are marked "1". 
+          The grid that was previously used to check marks = 0 is the same constructed in this function to check that every values are marked "1". If every value results "1", then the grid is completed and a " YAY!" message will appear.
+          The timer stops and shows how long did it take to fill all the squares.
+          We used clearInterval to reset the timer created with setInterval().
+
+          A random combination of elements picked from the two arrays(var roomNames + var roomColors) generates a room nickname associated with game time.
+
           ```
           //-------check that all values are marked "1"
           function checkCompletition(x, y) {
@@ -233,21 +238,16 @@ function handleCounter(data) {
                 }
               }
             }
-
+            //-------time stops
+            clearInterval(timeVar);
+            imageMode(CENTER);
+            fill(51, 73, 108, 120);
+            rect(0, 0,  640, 640);
+            //alert("YAY!");
+            image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
             //-------console log with time + random room
             console.log(roomColors[Math.floor(random(roomColors.length))] + " " + roomNames[Math.floor(random(roomNames.length))] + " : " + timer.innerHTML);
           }
-          ```
-          We used clearInterval to reset the timer created with setInterval().
-          (Conditional written in checkCompletition(){} function).
-          ```
-          //-------time stops
-          clearInterval(timeVar);
-          imageMode(CENTER);
-          fill(51, 73, 108, 120);
-          rect(0, 0,  640, 640);
-          //alert("YAY!");
-          image(yay, width / 2, height / 2, yay.width / 5, yay.height / 5);
           ```
 
 ## Difficulties encountered

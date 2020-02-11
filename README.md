@@ -79,6 +79,50 @@ The fonts we chose, VT323 and Fipps, are essential for entering the vintage and 
 <br>
 Now we will present some of the most interesting features of the code.<br>
 
+### Server.js
+##### Data emission & reception
+
+
+
+```var count = 0;
+var $ipsConnected = [];
+
+function newConnection(socket){
+
+	var $ipAddress = socket.handshake.address;
+	if (!$ipsConnected.hasOwnProperty($ipAddress)) {
+		$ipsConnected[$ipAddress] = 1;
+		count++;
+		socket.emit('counter', {count:count});
+	}
+
+	//when a new connection is created, print its id
+	console.log('socket:', socket.id);
+
+	//define what to do on different kind of messages
+	socket.on('mouse', mouseMessage);
+
+	function mouseMessage(data){
+		socket.broadcast.emit('mouseBroadcast', data);
+		console.log(data);
+	}
+  ```
+
+  ```
+  function newDisconnect(socket){
+
+    	if ($ipsConnected.hasOwnProperty($ipAddress)) {
+
+    		delete $ipsConnected[$ipAddress];
+  	    count--;
+  	    socket.emit('counter', {count:count});
+
+    	}
+  }
+  ```
+
+
+### Play.js
 ##### Grid construction
 The base of our game is a grid made of sixteen squares. Inside the preload function occurs the construction of the array concerning the values' control. As a starting point, we decided to state a value marked = 0.
 Then a grid is constructed, according to the canvas' dimensions, in order to obtain perfectly equal square spaces.
@@ -92,6 +136,10 @@ function setup() {
 
 xSize = 640 / rows;
 ySize = 640 / columns;
+
+stroke(51, 73, 108, 120);
+strokeWeight(4);
+noFill();
 
 //-------initialize the array, check that every value is marked "0"
 for (var i = 0; i < grid.length; i++) {

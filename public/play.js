@@ -41,10 +41,10 @@ function preload() {
 var socket;
 
 //-------grid variables
-var righe = 4;
-var colonne = 4;
+var rows = 4;
+var columns = 4;
 var executed = 0;
-var grid = new Array(righe);
+var grid = new Array(rows);
 
 //-------rects dimensions variables
 var xSize;
@@ -78,8 +78,8 @@ function setup() {
 
 
 
-  xSize = 640 / righe;
-  ySize = 640 / colonne;
+  xSize = 640 / rows;
+  ySize = 640 / columns;
 
   stroke(51, 73, 108, 120);
   strokeWeight(4);
@@ -88,15 +88,15 @@ function setup() {
 
   //-------grid used to make squares appear according to their position
   for (var i = 0; i < grid.length; i++) {
-    grid[i] = new Array(colonne);
+    grid[i] = new Array(columns);
     for (var k = 0; k < grid.length; k++) {
       grid[i][k] = 0;
     }
   }
 
   //-------square grid
-  for (var i = 0; i < righe; i++) {
-    for (var y = 0; y < colonne; y++) {
+  for (var i = 0; i < rows; i++) {
+    for (var y = 0; y < columns; y++) {
 
       rect(i * xSize, y * ySize, xSize, ySize);
 
@@ -140,10 +140,10 @@ function mouseClicked() {
     return;
   }
 
-  var ascisse = parseInt(mouseX / xSize);
-  var ordinate = parseInt(mouseY / ySize);
+  var axis = parseInt(mouseX / xSize);
+  var ordinates = parseInt(mouseY / ySize);
 
-  if (grid[ascisse][ordinate] == 1) {
+  if (grid[axis][ordinates] == 1) {
     //alert("Already Clicked!");
     return;
   }
@@ -184,14 +184,14 @@ function fillRectangle(x, y) {
   fill(51, 73, 108, 120);
   stroke(255)
 
-  var ascisse = parseInt(x / xSize);
-  var ordinate = parseInt(y / ySize);
-  rect(ascisse * xSize, ordinate * ySize, xSize, ySize);
+  var axis = parseInt(x / xSize);
+  var ordinates = parseInt(y / ySize);
+  rect(axis * xSize, ordinates * ySize, xSize, ySize);
   imageMode(CENTER);
-  image(imageArray[Math.floor(random(imageArray.length))], ascisse * xSize + xSize / 2, ordinate * ySize + ySize / 2, xSize / 2, ySize / 2);
+  image(imageArray[Math.floor(random(imageArray.length))], axis * xSize + xSize / 2, ordinates * ySize + ySize / 2, xSize / 2, ySize / 2);
 
 
-  checkCompletition(ascisse, ordinate);
+  checkCompletition(axis, ordinates);
 
 }
 
